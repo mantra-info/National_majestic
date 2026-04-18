@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+backend/.env
+frontend/.env
+backend/storage/tmp/*
+backend/storage/templates/*
+backend/storage/signatures/*
+backend/storage/certificates/*
+!backend/storage/templates/.gitkeep
+!backend/storage/signatures/.gitkeep
+!backend/storage/certificates/.gitkeep
+!backend/storage/tmp/.gitkeep

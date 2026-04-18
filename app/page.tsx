@@ -54,75 +54,16 @@ const galleryItems = [
 ] as const;
 
 const floorplanRows = [
-  ["Living Room", "20 m²"],
-  ["Dinning Room", "15 m²"],
-  ["Kitchen", "15 m²"],
-  ["Master Bedroom", "16 m²"],
-  ["Kids Bedroom 1", "12 m²"],
-  ["Kids Bedroom 2", "12 m²"],
-  ["Bath Room", "6 m²"],
-  ["Garage", "40 m²"],
-  ["Warehouse", "4 m²"]
+  ["Apartment Type", "3 & 4 BHK"],
+  ["Total Units", "83 Units"],
+  ["Plot Area", "1661 – 2555 sq.ft"],
+  ["Starting Price", "₹1.75 Cr Onwards"],
+  ["Status", "Ongoing"],
+  ["RERA No.", "K-RERA/PRJ/ERN/156/2025"],
+  ["Location", "Pathadipalam, Edappally"],
+  ["Floors", "G + 14 Floors"]
 ];
 
-const scheduleTimes = [
-  "10:00",
-  "11:00",
-  "12:00",
-  "13:00",
-  "14:00",
-  "15:00",
-  "16:00",
-  "17:00",
-  "18:00",
-  "19:00",
-  "20:00"
-];
-
-const nearbyHighlights = [
-  {
-    title: "Shopping & Entertainment",
-    accent: "Retail access",
-    items: [
-      ["LuLu Hypermarket", "0.6 km"],
-      ["Reliance Digital", "0.4 km"]
-    ]
-  },
-  {
-    title: "Educational Institutions",
-    accent: "Academic convenience",
-    items: [["Amrita School of Business", "2.9 km"]]
-  },
-  {
-    title: "Healthcare",
-    accent: "Healthcare access",
-    items: [["Amrita Institute of Medical Sciences", "Nearby"]]
-  },
-  {
-    title: "Connectivity",
-    accent: "Well-linked location",
-    items: [
-      ["Edappally Junction", "Easy access"],
-      ["NH 66 & NH 47", "Direct connectivity"]
-    ]
-  },
-  {
-    title: "Transport",
-    accent: "Easy daily commute",
-    items: [
-      ["Bus Stops", "100 m"],
-      ["Railway Station", "~4 km"]
-    ]
-  },
-  {
-    title: "City Access",
-    accent: "Strong urban reach",
-    items: [
-      ["Kochi City Centre", "Well connected"],
-      ["Metro & Road Connectivity", "Excellent"]
-    ]
-  }
-];
 
 export default function HomePage() {
   return (
@@ -146,9 +87,9 @@ export default function HomePage() {
                     <div className="de-flex-col">
                       <div id="logo">
                         <a href="/">
-                          <img className="logo-main" src="/images/logo-black.webp" alt="" />
-                          <img className="logo-scroll" src="/images/logo-black.webp" alt="" />
-                          <img className="logo-mobile" src="/images/logo-black.webp" alt="" />
+                          <img className="logo-main" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "60px", width: "auto" }} />
+                          <img className="logo-scroll" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "50px", width: "auto" }} />
+                          <img className="logo-mobile" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "44px", width: "auto" }} />
                         </a>
                       </div>
                     </div>
@@ -225,7 +166,7 @@ export default function HomePage() {
 
                     <div className="de-flex-col">
                       <a className="btn-main fx-slide w-100" href="#section-contact">
-                        <span>Schedule a Visit</span>
+                        <span>Request a Callback</span>
                       </a>
 
                       <div className="menu_side_area">
@@ -240,21 +181,14 @@ export default function HomePage() {
         </header>
 
         <section id="section-hero" className="text-light no-top no-bottom relative overflow-hidden z-1000">
-          <div className="abs w-100 abs-centered z-2">
+          <div className="abs w-100 z-2" style={{ bottom: "60px" }}>
             <div className="container">
-              <div className="spacer-double" />
-
-              <div className="row g-4 align-items-center justify-content-between">
-                <div className="col-md-5">
-                  <h1 className="mb-0">Live the premium life you deserve.</h1>
-                </div>
-
-                <div className="col-lg-4">
-                  <h4 className="fw-400">320 40th Street B4, New York, NY 10019</h4>
-                  <a className="btn-main btn-line bg-blur fx-slide" href="#section-contact">
-                    <span>Schedule a Visit</span>
-                  </a>{" "}
-                  <a className="btn-main btn-line bg-blur fx-slide" href="#section-overview">
+              <div className="row g-3 justify-content-center justify-content-lg-end">
+                <div className="col-12 col-sm-10 col-md-6 col-lg-4 text-center text-lg-start">
+                  <a className="btn-main btn-line bg-blur fx-slide me-2 mb-2" href="#section-contact">
+                    <span>Request a Callback</span>
+                  </a>
+                  <a className="btn-main btn-line bg-blur fx-slide mb-2" href="#section-overview">
                     <span>Explore Property</span>
                   </a>
                 </div>
@@ -264,13 +198,13 @@ export default function HomePage() {
           <div className="vertical-center">
             <div className="swiper">
               <div className="swiper-wrapper">
-                {["3.webp", "4.webp"].map((image) => (
+                {["gbp22.jpg", "Royal-Palace_Grid_Post_.jpg.jpeg"].map((image) => (
                   <div key={image} className="swiper-slide">
                     <div
                       className="swiper-inner"
-                      data-bgimage={`url(/images/slider/${image})`}
+                      data-bgimage={`url(/assets/images/${image})`}
                       style={{
-                        backgroundImage: `url(/images/slider/${image})`,
+                        backgroundImage: `url(/assets/images/${image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center center",
                         backgroundRepeat: "no-repeat"
@@ -312,13 +246,13 @@ export default function HomePage() {
                   <h2 className="wow fadeInUp" data-wow-delay=".4s">
                     A Perfect Balance of Comfort, Design, and Everyday Convenience.
                   </h2>
-                  <p className="wow fadeInUp" data-wow-delay=".6s">
+                  {/* <p className="wow fadeInUp" data-wow-delay=".6s">
                     Non anim in pariatur in ex excepteur commodo do officia amet incididunt ullamco nostrud aliquip
                     minim magna esse dolore..
-                  </p>
+                  </p> */}
 
                   <a className="btn-main fx-slide" href="#section-contact">
-                    <span>Schedule a Visit</span>
+                    <span>Request a Callback</span>
                   </a>
                 </div>
               </div>
@@ -326,16 +260,16 @@ export default function HomePage() {
               <div className="col-lg-6">
                 <div className="row g-4">
                   {[
-                    ["1.png", "Terrace Garden & Party Area", "Enjoy stunning views and host memorable moments in a premium rooftop setting."],
-                    ["2.png", "Fully Equipped Fitness Centre", "Stay active and healthy with a modern gym featuring essential equipment for your daily workouts."],
-                    ["3.png", "Children’s Play Area", "A safe and engaging space where children can play, explore, and enjoy their time freely."],
-                    ["4.png", "24/7 Power Backup", "Reliable power backup system ensuring uninterrupted comfort at all times."],
-                    ["4.png", "Rainwater Harvesting System", "Eco-friendly water management system designed to support sustainable living."],
-                    ["4.png", "Multipurpose Hall", "A flexible space ideal for events, celebrations, and community gatherings."]
-                  ].map(([image, title, description]) => (
+                    ["fa-solid fa-tree", "Terrace Garden & Party Area", "Enjoy stunning views and host memorable moments in a premium rooftop setting."],
+                    ["fa-solid fa-dumbbell", "Fully Equipped Fitness Centre", "Stay active and healthy with a modern gym featuring essential equipment for your daily workouts."],
+                    ["fa-solid fa-child-reaching", "Children’s Play Area", "A safe and engaging space where children can play, explore, and enjoy their time freely."],
+                    ["fa-solid fa-bolt", "24/7 Power Backup", "Reliable power backup system ensuring uninterrupted comfort at all times."],
+                    ["fa-solid fa-droplet", "Rainwater Harvesting System", "Eco-friendly water management system designed to support sustainable living."],
+                    ["fa-solid fa-people-roof", "Multipurpose Hall", "A flexible space ideal for events, celebrations, and community gatherings."]
+                  ].map(([icon, title, description]) => (
                     <div key={title} className="col-md-6">
                       <div className="h-100 rounded-1">
-                        <img src={`/assets/images/icons-color/${image}`} className="w-70px mb-4 wow scaleIn" alt="" />
+                        <i className={`${icon} fa-3x id-color mb-4 wow scaleIn d-block`} />
                         <div className="relative wow fadeInUp">
                           <h4>{title}</h4>
                           <p className="mb-0">{description}</p>
@@ -472,8 +406,8 @@ export default function HomePage() {
                     Home Floorplans
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay=".6s">
-                    Dolor ad consectetur dolore incididunt pariatur aliqua ut laborum aliquip eiusmod officia tempor ex
-                    commodo amet voluptate.
+                    National Royal Palace offers premium 3 & 4 BHK luxury apartments at Pathadipalam, Edappally —
+                    thoughtfully crafted with contemporary design and superior construction quality for refined urban living.
                   </p>
 
                   <div className="relative overflow-hidden">
@@ -489,18 +423,37 @@ export default function HomePage() {
 
               <div className="col-lg-8">
                 <div className="owl-carousel owl-theme owl-single-dots">
-                  <img
-                    src="/images/misc/floorplan-2-color.webp"
-                    className="w-100 wow fadeInUp"
-                    data-wow-delay=".2s"
-                    alt=""
-                  />
-                  <img
-                    src="/images/misc/floorplan-2-color.webp"
-                    className="w-100 wow fadeInUp"
-                    data-wow-delay=".2s"
-                    alt=""
-                  />
+                  {[
+                    ["14TH-FLOOR-PLAN-scaled.jpg", "14th Floor Plan"],
+                    ["TYPICAL-LAYOUT-scaled.jpg", "Typical Layout"],
+                    ["FIRST-FLOOR-LAYOUT-1-scaled.jpg", "First Floor Layout"],
+                    ["GROUND-FLOOR-PLAN-2-scaled.jpg", "Ground Floor Plan"],
+                    ["BASEMENT-FLOOR-PLAN-scaled.jpg", "Basement Floor Plan"],
+                    ["TERRACE-FLOOR-PLAN-scaled.jpg", "Terrace Floor Plan"],
+                    ["SWIMMING-POOL-LEVEL-PLAN-2-scaled.jpg", "Swimming Pool Level"],
+                    ["FLAT-A-1-1-scaled.jpg", "Flat A-1"],
+                    ["FLAT-A-2-scaled.jpg", "Flat A-2"],
+                    ["FLAT-B-2-scaled.jpg", "Flat B"],
+                    ["FLAT-B1-scaled.jpg", "Flat B-1"],
+                    ["FLAT-C-2-scaled.jpg", "Flat C"],
+                    ["FLAT-C1-scaled.jpg", "Flat C-1"],
+                    ["FLAT-D-2-scaled.jpg", "Flat D"],
+                    ["FLAT-D1-scaled.jpg", "Flat D-1"],
+                    ["FLAT-E-2-scaled.jpg", "Flat E"],
+                    ["FLAT-F-2-scaled.jpg", "Flat F"]
+                  ].map(([file, label]) => (
+                    <div key={file} className="relative">
+                      <img
+                        src={`/assets/images/floorplans/${file}`}
+                        className="w-100 wow fadeInUp"
+                        data-wow-delay=".2s"
+                        alt={label}
+                      />
+                      <div className="abs bottom-0 start-0 bg-blur px-4 py-2 m-3 rounded-1 text-white">
+                        <h6 className="mb-0">{label}</h6>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -509,10 +462,10 @@ export default function HomePage() {
 
             <div className="row g-3">
               {[
-                ["Size", "/images/svg/size.svg", "1665 sqft"],
-                ["Beds", "/images/svg/bed.svg", "5"],
-                ["Baths", "/images/svg/bath.svg", "5"],
-                ["Parking Slots", "/images/svg/car.svg", "5"]
+                ["Plot Area", "/images/svg/size.svg", "1661 – 2555 sqft"],
+                ["Bedrooms", "/images/svg/bed.svg", "3 – 4 BHK"],
+                ["Total Units", "/images/svg/bath.svg", "83 Units"],
+                ["Parking Slots", "/images/svg/car.svg", "1 Per Unit"]
               ].map(([title, icon, value]) => (
                 <div key={title} className="col-md-3 col-6">
                   <div className="bg-dark-2 py-4 rounded-1 text-center">
@@ -541,128 +494,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="row g-4 align-items-stretch">
-              <div className="col-xl-4">
-                <div
-                  className="h-100 rounded-1 text-light wow fadeInUp"
-                  data-wow-delay=".0s"
-                  style={{
-                    padding: "clamp(1.5rem, 3vw, 2.5rem)",
-                    background:
-                      "linear-gradient(145deg, rgba(18, 34, 61, 0.96) 0%, rgba(11, 77, 90, 0.92) 55%, rgba(20, 131, 110, 0.88) 100%)"
-                  }}
-                >
-                  <div
-                    className="mb-3 d-inline-flex align-items-center justify-content-center text-dark fw-700 rounded-pill px-3 py-2"
-                    style={{ backgroundColor: "rgba(255,255,255,0.88)", fontSize: "14px", letterSpacing: ".08em" }}
-                  >
-                    PRIME LOCATION
-                  </div>
-                  <h3 className="mb-3 text-white">Everything essential is within quick reach.</h3>
-                  <p className="mb-4 text-white-50">
-                    From shopping and healthcare to education and transport, this address keeps daily life connected,
-                    efficient, and comfortable.
-                  </p>
-                  <div className="row g-3">
-                    {[
-                      ["Bus Stops", "100 m"],
-                      ["Railway Station", "~4 km"],
-                      ["Amrita School of Business", "2.9 km"],
-                      ["LuLu Hypermarket", "0.6 km"]
-                    ].map(([label, value]) => (
-                      <div key={label} className="col-sm-6">
-                        <div
-                          className="rounded-1 p-3 h-100"
-                          style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
-                        >
-                          <div className="fs-12 text-uppercase text-white-50 mb-1" style={{ overflowWrap: "anywhere" }}>
-                            {label}
-                          </div>
-                          <div className="fw-600 text-white">{value}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-xl-8">
-                <div className="row g-4">
-                  {nearbyHighlights.map(({ title, accent, items }, index) => (
-                    <div key={title} className="col-lg-6">
-                      <div
-                        className="h-100 rounded-1 wow fadeInUp"
-                        data-wow-delay={`${index * 0.1}s`}
-                        style={{
-                          padding: "clamp(1.15rem, 2.6vw, 1.5rem)",
-                          background: "linear-gradient(180deg, rgba(20,20,20,0.98) 0%, rgba(12,12,12,0.98) 100%)",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                          boxShadow: "0 18px 45px rgba(0,0,0,0.18)"
-                        }}
-                      >
-                        <div className="mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                          <div
-                            className="fs-12 text-uppercase mb-2"
-                            style={{ color: "#b8c2cc", letterSpacing: ".08em", overflowWrap: "anywhere" }}
-                          >
-                            {accent}
-                          </div>
-                          <div className="d-flex align-items-center gap-3">
-                            <div
-                              className="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                              style={{
-                                width: "44px",
-                                height: "44px",
-                                background: "linear-gradient(135deg, rgba(201, 167, 92, 0.24), rgba(255,255,255,0.08))",
-                                border: "1px solid rgba(201, 167, 92, 0.28)",
-                                color: "#f0d9a1",
-                                fontWeight: 700,
-                                fontSize: "14px"
-                              }}
-                            >
-                              {String(index + 1).padStart(2, "0")}
-                            </div>
-                            <h4 className="mb-0 text-white" style={{ overflowWrap: "anywhere" }}>
-                              {title}
-                            </h4>
-                          </div>
-                        </div>
-
-                        <div className="d-grid gap-2">
-                          {items.map(([label, value]) => (
-                            <div
-                              key={label}
-                              className="rounded-1 px-3 py-3"
-                              style={{ backgroundColor: "rgba(255,255,255,0.04)" }}
-                            >
-                              <div className="d-flex flex-column align-items-start gap-3">
-                                <div
-                                  className="text-light"
-                                  style={{ minWidth: 0, width: "100%", overflowWrap: "anywhere", lineHeight: 1.5 }}
-                                >
-                                  {label}
-                                </div>
-                                <div
-                                  className="rounded-pill px-3 py-1 fw-600"
-                                  style={{
-                                    backgroundColor: "rgba(201, 167, 92, 0.16)",
-                                    color: "#f0d9a1",
-                                    fontSize: "14px",
-                                    whiteSpace: "nowrap",
-                                    flexShrink: 0
-                                  }}
-                                >
-                                  {value}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+            <div className="row g-4">
+              {[
+                ["LuLu Mall, Edappally", "2 km", "/assets/images/nearby/lulu-mall.jpg"],
+                ["Amrita Institute of Medical Sciences", "3 km", "/assets/images/nearby/aims-kochi.jpg"],
+                ["Amrita Vishwa Vidyapeetham", "3 km", "/assets/images/nearby/amrita-campus.jpg"],
+                ["Edappally Metro Station", "1 km", "/assets/images/nearby/edappally-metro.jpg"]
+              ].map(([label, distance, image]) => (
+                <div key={label} className="col-lg-3 col-md-6 col-sm-6 col-12">
+                  <div className="overflow-hidden rounded-1 text-light wow zoomIn" data-wow-delay=".0s" style={{ height: "280px", position: "relative" }}>
+                    <img
+                      src={image}
+                      alt={label}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                    <div style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, transparent 100%)",
+                      zIndex: 1
+                    }} />
+                    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px", zIndex: 2 }}>
+                      <h5 className="mb-1 text-white lh-sm" style={{ wordBreak: "break-word" }}>{label}</h5>
+                      <span className="text-white fs-14 fw-500 opacity-75">{distance}</span>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -695,7 +553,7 @@ export default function HomePage() {
                   Contact Us
                 </div>
                 <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                  Schedule a Visit
+                  Request a Callback
                 </h2>
               </div>
             </div>
@@ -706,41 +564,37 @@ export default function HomePage() {
                   <img src="/images/agents/1.webp" className="w-100 rounded-1" alt="" />
 
                   <div className="mt-3">
-                    <h4 className="mb-0">Emily Rodriguez</h4>
-                    <div className="fw-500 id-color">(555) 234-5678</div>
+                    <h4 className="mb-0">National Builders</h4>
+                    <div className="fw-500 id-color">+91 98475 33355</div>
+                    <div className="fw-500 id-color">+91 98475 44222</div>
+                    <div className="fw-500 id-color mt-1">marketingkochi@nationalbuilders.in</div>
                   </div>
                 </div>
               </div>
 
               <div className="col-md-5">
-                <form name="bookingForm" id="booking_form" method="post" action="#">
+                <form name="callbackForm" id="callback_form" method="post" action="#">
                   <div className="row g-4">
                     <div className="col-md-6">
                       <input type="text" name="name" id="name" className="form-control" placeholder="Your Name" required />
                     </div>
 
                     <div className="col-md-6">
-                      <input type="text" name="email" id="email" className="form-control" placeholder="Your Email" required />
+                      <input type="tel" name="phone" id="phone" className="form-control" placeholder="Phone Number" required />
                     </div>
 
                     <div className="col-md-6">
-                      <div id="date" className="relative input-group date" data-date-format="mm-dd-yyyy">
-                        <i className="absolute top-0 end-0 id-color pt-3 pe-3 icofont-calendar" />
-                        <input className="form-control" name="date" type="text" />
-                        <span className="input-group-addon">
-                          <i className="glyphicon glyphicon-calendar" />
-                        </span>
-                      </div>
+                      <input type="email" name="email" id="email" className="form-control" placeholder="Your Email" />
                     </div>
 
                     <div className="col-md-6">
                       <div className="relative">
-                        <select name="time" id="time" className="form-control" defaultValue="10:00">
-                          {scheduleTimes.map((time) => (
-                            <option key={time} value={time}>
-                              {time}
-                            </option>
-                          ))}
+                        <select name="best_time" id="best_time" className="form-control" defaultValue="">
+                          <option value="" disabled>Best Time to Call</option>
+                          <option value="morning">Morning (9 AM – 12 PM)</option>
+                          <option value="afternoon">Afternoon (12 PM – 3 PM)</option>
+                          <option value="evening">Evening (3 PM – 6 PM)</option>
+                          <option value="anytime">Anytime</option>
                         </select>
                         <i className="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down" />
                       </div>
@@ -751,8 +605,7 @@ export default function HomePage() {
                         name="message"
                         id="message"
                         className="form-control h-150px"
-                        placeholder="Submit Request"
-                        required
+                        placeholder="Your Message (optional)"
                       ></textarea>
                     </div>
 
@@ -779,76 +632,90 @@ export default function HomePage() {
 
       <footer className="section-dark">
         <div className="container">
-          <div className="row gx-5 justify-content-center">
-            <div className="col-lg-8">
-              <div className="text-center">
-                <img src="/images/logo.webp" className="w-200px" alt="" />
-                <div className="spacer-single" />
-                <div className="fs-16">
-                  712 Jefferson Ave, Brooklyn
-                  <br />
-                  New York 11221
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="row g-4 g-lg-5">
 
-          <div className="spacer-double" />
-
-          <div className="row g-4">
-            <div className="col-lg-4 col-md-6 mb-sm-30">
-              <div className="d-flex justify-content-center">
-                <i className="fs-60 id-color icon_phone" />
-                <div className="ms-3">
-                  <h4 className="mb-0">Call Us</h4>
-                  <p>Call: +1 123 456 789</p>
-                </div>
+            {/* Brand + About + Social */}
+            <div className="col-12 col-md-6 col-lg-4">
+              <img
+                src="/assets/images/national-royal-palace-logo.png"
+                className="mb-4"
+                alt="National Royal Palace"
+                style={{ maxWidth: "160px", width: "100%", height: "auto" }}
+              />
+              <p className="fs-15 opacity-75">
+                National Builders is a leading real estate developer with 135+ landmark projects across Navi Mumbai and Kerala, committed to quality and excellence.
+              </p>
+              <div className="social-icons mt-3">
+                <a href="#"><i className="fa-brands fa-instagram" /></a>
+                <a href="#"><i className="fa-brands fa-facebook-f" /></a>
+                <a href="#"><i className="fa-brands fa-whatsapp" /></a>
+                <a href="#"><i className="fa-brands fa-youtube" /></a>
+                <a href="#"><i className="fa-brands fa-x-twitter" /></a>
+                <a href="#"><i className="fa-brands fa-linkedin-in" /></a>
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6 mb-sm-30">
-              <div className="d-flex justify-content-center">
-                <i className="fs-60 id-color icon_clock" />
-                <div className="ms-3">
-                  <h4 className="mb-0">Opening Hours</h4>
-                  <p>Mon to Sat 08:00 - 20:00</p>
-                </div>
-              </div>
+            {/* Quick Links */}
+            <div className="col-6 col-md-3 col-lg-2">
+              <h5 className="mb-3 mb-lg-4">Quick Links</h5>
+              <ul className="list-unstyled mb-0" style={{ lineHeight: "2.4" }}>
+                <li><a href="#" className="text-white opacity-75 text-decoration-none">Home</a></li>
+                <li><a href="#section-overview" className="text-white opacity-75 text-decoration-none">Overview</a></li>
+                <li><a href="#section-rooms" className="text-white opacity-75 text-decoration-none">Rooms</a></li>
+                <li><a href="#section-gallery" className="text-white opacity-75 text-decoration-none">Gallery</a></li>
+                <li><a href="#section-floorplan" className="text-white opacity-75 text-decoration-none">Floorplan</a></li>
+                <li><a href="#section-contact" className="text-white opacity-75 text-decoration-none">Contact</a></li>
+              </ul>
             </div>
 
-            <div className="col-lg-4 col-md-6 mb-sm-30">
-              <div className="d-flex justify-content-center">
-                <i className="fs-60 id-color icon_mail" />
-                <div className="ms-3">
-                  <h4 className="mb-0">Email Us</h4>
-                  <p>contact@residem.com</p>
-                </div>
-              </div>
+            {/* Kochi Office */}
+            <div className="col-12 col-md-6 col-lg-3">
+              <h5 className="mb-3 mb-lg-4">Kochi Office</h5>
+              <p className="fs-15 opacity-75 mb-3">
+                National Pearl Star, 5th Floor,<br />
+                High School Junction, Edappally,<br />
+                Kochi, Kerala – 682024
+              </p>
+              <p className="fs-15 mb-1">
+                <i className="fa-solid fa-phone me-2 id-color" />
+                <a href="tel:+919847533355" className="text-white opacity-75 text-decoration-none">+91 98475 33355</a>
+              </p>
+              <p className="fs-15 mb-1">
+                <i className="fa-solid fa-phone me-2 id-color" />
+                <a href="tel:+919847544222" className="text-white opacity-75 text-decoration-none">+91 98475 44222</a>
+              </p>
+              <p className="fs-15 mb-1">
+                <i className="fa-solid fa-phone me-2 id-color" />
+                <a href="tel:+919847717771" className="text-white opacity-75 text-decoration-none">+91 98477 17771</a>
+              </p>
+              <p className="fs-15 mt-2 mb-0">
+                <i className="fa-solid fa-envelope me-2 id-color" />
+                <a href="mailto:marketingkochi@nationalbuilders.in" className="text-white opacity-75 text-decoration-none" style={{ wordBreak: "break-all" }}>marketingkochi@nationalbuilders.in</a>
+              </p>
             </div>
+
+            {/* Navi Mumbai Office */}
+            <div className="col-12 col-md-6 col-lg-3">
+              <h5 className="mb-3 mb-lg-4">Navi Mumbai Office</h5>
+              <p className="fs-15 opacity-75 mb-0">
+                Sea Queen Heritage Building,<br />
+                1st Floor, Plot 6, Sector 18,<br />
+                Palm Beach Service Road, Sanpada,<br />
+                Navi Mumbai – 400705
+              </p>
+            </div>
+
           </div>
         </div>
-        <div className="subfooter">
+
+        <div className="subfooter mt-4 mt-lg-5">
           <div className="container">
-            <div className="row">
-              <div className="col-md-6">Copyright 2026 - Residem by Designesia</div>
-              <div className="col-md-6 text-md-end">
-                <div className="social-icons mb-sm-30 text-center">
-                  <a href="#">
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a href="#">
-                    <i className="fa-brands fa-x-twitter" />
-                  </a>
-                  <a href="#">
-                    <i className="fa-brands fa-instagram" />
-                  </a>
-                  <a href="#">
-                    <i className="fa-brands fa-youtube" />
-                  </a>
-                  <a href="#">
-                    <i className="fa-brands fa-whatsapp" />
-                  </a>
-                </div>
+            <div className="row align-items-center g-2">
+              <div className="col-12 col-md-6 text-center text-md-start">
+                Copyright &copy; 2025 National Builders. All Rights Reserved.
+              </div>
+              <div className="col-12 col-md-6 text-center text-md-end opacity-75 fs-14">
+                Developed by <a href="https://web.mantrainfotechs.com" target="_blank" rel="noopener noreferrer" className="text-white text-decoration-none">mits</a>
               </div>
             </div>
           </div>
