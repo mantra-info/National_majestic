@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "National Royal Palace – Premium 3 & 4 BHK Apartments in Kochi",
-  description: "National Royal Palace by National Builders – Luxury 3 & 4 BHK apartments at Pathadipalam, Edappally, Kochi. RERA: K-RERA/PRJ/ERN/156/2025."
+  title: "National Majestic – Ultra Premium 3 & 4 BHK Apartments in Edappally, Kochi",
+  description: "National Majestic by National Builders – Ultra luxury 3 & 4 BHK apartments in the heart of Edappally, Kochi. RERA: K-RERA/PRJ/ERN/032/2023."
 };
 
 const stylesheetHrefs = [
@@ -17,7 +17,8 @@ const stylesheetHrefs = [
   "/assets/datepicker.css",
   "/assets/colors/scheme-01.css",
   "/assets/fonts/et-line-font/style.css",
-  "/assets/fonts/icofont/icofont.min.css"
+  "/assets/fonts/icofont/icofont.min.css",
+  "/assets/custom-theme.css"
 ];
 
 export default function RootLayout({
@@ -28,8 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/assets/images/national-royal-palace-logo.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/assets/images/national-royal-palace-logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/assets/images/national-majestic-logo.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/assets/images/national-majestic-logo.png" />
         {stylesheetHrefs.map((href) => (
           <link key={href} rel="stylesheet" href={href} />
         ))}

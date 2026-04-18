@@ -1,67 +1,46 @@
 import Script from "next/script";
 
-const roomTabs = [
+
+const latestProjects = [
   {
-    name: "Living Room",
-    area: "20 m²",
-    image: "/images/discover-rooms/l1.webp",
-    description:
-      "A spacious and elegant living area designed for comfort and style. Perfect for relaxing moments and welcoming guests with a modern touch."
+    name: "National Signature Tower 2",
+    location: "Ernakulam, Kerala",
+    type: "Premium Apartments",
+    image: "/assets/images/gallery/glry-1.jpg",
+    status: "Completed"
   },
   {
-    name: "Dinning Room",
-    area: "15 m²",
-    image: "/images/discover-rooms/l2.webp",
-    description:
-      "A well-planned dining space that brings families together. Designed for comfort, warmth, and memorable dining experiences."
+    name: "National Shalom",
+    location: "Thiruvalla, Kerala",
+    type: "Luxury Residences",
+    image: "/assets/images/gallery/glry-2.jpg",
+    status: "Completed"
   },
   {
-    name: "Kitchen",
-    area: "15 m²",
-    image: "/images/discover-rooms/l3.webp",
-    description:
-      "A modern kitchen with smart layout and quality finishes. Built for convenience, functionality, and everyday ease."
+    name: "National Treedom Park Tower 2",
+    location: "Vyttila, Kochi",
+    type: "Premium Apartments",
+    image: "/assets/images/gallery/glry-3.jpg",
+    status: "Completed"
   },
   {
-    name: "Master Bedroom",
-    area: "16 m²",
-    image: "/images/discover-rooms/l4.webp",
-    description:
-      "A peaceful and private retreat with ample space and natural light. Designed to provide comfort, relaxation, and luxury living."
-  },
-  {
-    name: "Bathroom",
-    area: "6 m²",
-    image: "/images/discover-rooms/l5.webp",
-    description:
-      "Stylish and well-equipped bathrooms with high-quality fittings. Designed for hygiene, comfort, and a refreshing experience."
+    name: "National Kingdom",
+    location: "Palarivattom, Kochi",
+    type: "Luxury Residences",
+    image: "/assets/images/gallery/glry-4.jpg",
+    status: "Completed"
   }
 ];
 
-const galleryItems = [
-  ["interior", "/images/gallery/l1.webp"],
-  ["interior", "/images/gallery/l2.webp"],
-  ["interior", "/images/gallery/l3.webp"],
-  ["interior", "/images/gallery/l4.webp"],
-  ["interior", "/images/gallery/l5.webp"],
-  ["exterior", "/images/gallery/l6.webp"],
-  ["exterior", "/images/gallery/l7.webp"],
-  ["exterior", "/images/gallery/l8.webp"],
-  ["facilities", "/images/gallery/l9.webp"],
-  ["facilities", "/images/gallery/l10.webp"],
-  ["facilities", "/images/gallery/l11.webp"],
-  ["facilities", "/images/gallery/l12.webp"]
-] as const;
-
 const floorplanRows = [
   ["Apartment Type", "3 & 4 BHK"],
-  ["Total Units", "83 Units"],
-  ["Plot Area", "1661 – 2555 sq.ft"],
-  ["Starting Price", "₹1.75 Cr Onwards"],
+  ["Total Units", "20 Units"],
+  ["Plot Area", "2124 – 3917 sq.ft"],
+  ["Starting Price", "₹2.35 Cr Onwards"],
   ["Status", "Ongoing"],
-  ["RERA No.", "K-RERA/PRJ/ERN/156/2025"],
-  ["Location", "Pathadipalam, Edappally"],
-  ["Floors", "G + 14 Floors"]
+  ["RERA No.", "K-RERA/PRJ/ERN/032/2023"],
+  ["Location", "Edappally, Kochi"],
+  ["Floors", "B + G + 12 Floors"]
 ];
 
 
@@ -87,9 +66,9 @@ export default function HomePage() {
                     <div className="de-flex-col">
                       <div id="logo">
                         <a href="/">
-                          <img className="logo-main" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "60px", width: "auto" }} />
-                          <img className="logo-scroll" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "50px", width: "auto" }} />
-                          <img className="logo-mobile" src="/assets/images/national-royal-palace-logo.png" alt="National Royal Palace" style={{ maxHeight: "44px", width: "auto" }} />
+                          <img className="logo-main" src="/assets/images/national-majestic-logo.png" alt="National Royal Palace" style={{ maxHeight: "60px", width: "auto" }} />
+                          <img className="logo-scroll" src="/assets/images/national-majestic-logo.png" alt="National Royal Palace" style={{ maxHeight: "50px", width: "auto" }} />
+                          <img className="logo-mobile" src="/assets/images/national-majestic-logo.png" alt="National Royal Palace" style={{ maxHeight: "44px", width: "auto" }} />
                         </a>
                       </div>
                     </div>
@@ -98,56 +77,22 @@ export default function HomePage() {
                       <div className="de-flex-col header-col-mid">
                         <ul id="mainmenu">
                           <li>
-                            <a className="menu-item" href="#">
-                              Home
+                            <a className="menu-item" href="#">Home</a>
+                          </li>
+                          <li>
+                            <a className="menu-item" href="#section-about">
+                              About
                             </a>
-                            <ul className="mega">
-                              <li>
-                                <div className="container">
-                                  <div className="sb-menu p-4">
-                                    <div className="row g-3">
-                                      {[
-                                        ["Single Property 1", "/images/demo/homepage-1.webp", "/"],
-                                        ["Single Property 2", "/images/demo/homepage-2.webp", "#"],
-                                        ["Single Property 3", "/images/demo/homepage-6.webp", "#"],
-                                        ["New: Single Property 4", "/images/demo/homepage-7.webp", "#"],
-                                        ["Apartment 1", "/images/demo/homepage-3.webp", "#"],
-                                        ["Apartment 2", "/images/demo/homepage-4.webp", "#"],
-                                        ["Single Apartment", "/images/demo/homepage-5.webp", "#"],
-                                        ["Coming Soon", "/images/demo/coming-soon.webp", "#"]
-                                      ].map(([label, image, href]) => (
-                                        <div key={label} className="col-lg-3 col-md-4 col-sm-6 text-center">
-                                          <div className="relative hover text-center overflow-hidden soft-shadow">
-                                            <a className="p-0" href={href}>
-                                              <img
-                                                src={image}
-                                                className="w-100 relative hover-scale-1-1"
-                                                alt={label}
-                                              />
-                                            </a>
-                                          </div>
-                                          <h6 className="mt-3">{label}</h6>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
                           </li>
                           <li>
                             <a className="menu-item" href="#section-overview">
                               Overview
                             </a>
                           </li>
+
                           <li>
-                            <a className="menu-item" href="#section-rooms">
-                              Rooms
-                            </a>
-                          </li>
-                          <li>
-                            <a className="menu-item" href="#section-gallery">
-                              Gallery
+                            <a className="menu-item" href="#section-projects">
+                              Projects
                             </a>
                           </li>
                           <li>
@@ -181,24 +126,33 @@ export default function HomePage() {
         </header>
 
         <section id="section-hero" className="text-light no-top no-bottom relative overflow-hidden z-1000">
-          <div className="abs w-100 z-2" style={{ bottom: "60px" }}>
+
+          {/* Centre text overlay */}
+          <div className="abs w-100 z-2 text-center" style={{ top: "58%", transform: "translateY(-50%)" }}>
             <div className="container">
-              <div className="row g-3 justify-content-center justify-content-lg-end">
-                <div className="col-12 col-sm-10 col-md-6 col-lg-4 text-center text-lg-start">
-                  <a className="btn-main btn-line bg-blur fx-slide me-2 mb-2" href="#section-contact">
-                    <span>Request a Callback</span>
-                  </a>
-                  <a className="btn-main btn-line bg-blur fx-slide mb-2" href="#section-overview">
-                    <span>Explore Property</span>
-                  </a>
-                </div>
+              {/* <div className="hero-tagline wow fadeInUp">Edappally, Kochi</div> */}
+              <h1 className="hero-title wow fadeInUp" data-wow-delay=".15s">
+                Live the<br />Majestic Life
+              </h1>
+              <p className="wow fadeInUp mt-3 mb-4" data-wow-delay=".25s" style={{ fontSize: "14px", letterSpacing: "1.5px", textTransform: "uppercase" }}>
+                Ultra-Premium 3 &amp; 4 BHK Apartments
+              </p>
+              <div className="wow fadeInUp d-flex gap-3 justify-content-center flex-wrap" data-wow-delay=".35s">
+                <a className="btn-main fx-slide" href="#section-contact">
+                  <span>Request a Callback</span>
+                </a>
+                <a className="btn-main btn-line fx-slide" href="#section-about">
+                  <span>Explore Property</span>
+                </a>
               </div>
             </div>
           </div>
+
+          {/* Background swiper */}
           <div className="vertical-center">
             <div className="swiper">
               <div className="swiper-wrapper">
-                {["gbp22.jpg", "Royal-Palace_Grid_Post_.jpg.jpeg"].map((image) => (
+                {["gbp11.jpg", "Royal-Palace_Grid_Post_Web-banner.jpg.jpeg"].map((image) => (
                   <div key={image} className="swiper-slide">
                     <div
                       className="swiper-inner"
@@ -210,7 +164,7 @@ export default function HomePage() {
                         backgroundRepeat: "no-repeat"
                       }}
                     >
-                      <div className="sw-overlay op-4" />
+                      <div className="sw-overlay" style={{ background: "rgba(0,0,0,0.45)" }} />
                     </div>
                   </div>
                 ))}
@@ -218,19 +172,97 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="abs w-100 bottom-0 z-2 pb-4 sm-hide">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="d-flex justify-content-between">
-                    {["Spacious Rooms", "Private Garden", "Walk-in Closets", "Swimming Pool"].map((item) => (
-                      <div key={item}>
-                        <h6>{item}</h6>
-                      </div>
-                    ))}
+          {/* Bottom info bar */}
+          <div className="abs w-100 bottom-0 z-2 pb-4 sm-hide" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)" }}>
+            <div className="container pt-3">
+              <div className="col-lg-12">
+                <div className="d-flex justify-content-between">
+                  {[
+                    ["Ultra Premium", "Apartments"],
+                    ["Rooftop", "Swimming Pool"],
+                    ["AC Fitness", "Centre"],
+                    ["Heart of", "Edappally"]
+                  ].map(([label, sub]) => (
+                    <div key={label} className="hero-bar-item">
+                      <strong>{label}</strong>
+                      <span>{sub}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="section-about">
+          <div className="container">
+            <div className="row g-5 align-items-center justify-content-between">
+
+              {/* Image side */}
+              <div className="col-lg-5 wow fadeInLeft" data-wow-delay=".2s">
+                <div className="position-relative">
+                  <img
+                    src="/assets/images/abt.png"
+                    className="w-100 rounded-1"
+                    alt="National Majestic"
+                    style={{ objectFit: "cover", maxHeight: "560px" }}
+                  />
+                  {/* Floating stats card */}
+                  <div className="about-stat-card text-light wow fadeInUp" data-wow-delay=".4s">
+                    <div className="d-flex align-items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                      <div className="about-stat-value">135+</div>
+                      <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Landmark<br />Projects</div>
+                    </div>
+                    <div className="d-flex align-items-center gap-3">
+                      <div className="about-stat-value">24/7</div>
+                      <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Homecare<br />Support</div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Content side */}
+              <div className="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
+                <div className="subtitle wow fadeInUp" data-wow-delay=".2s">About Us</div>
+                <h2 className="wow fadeInUp" data-wow-delay=".3s">
+                  National Majestic
+                </h2>
+                <div
+                  className="wow fadeInUp mb-1"
+                  data-wow-delay=".35s"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}
+                >
+                  <i className="fa-solid fa-location-dot id-color" />
+                  <span className="fw-500">Edappally, Kochi &nbsp;·&nbsp; 3 &amp; 4 BHK Residential Apartments</span>
+                </div>
+                <p className="wow fadeInUp" data-wow-delay=".4s">
+                  National Majestic by National Builders is a premier residential project located in the heart of Edappally, Kochi. Offering ultra-luxury 3 and 4 BHK apartments, this project combines modern architecture with premium amenities — providing a sophisticated and comfortable living experience for discerning homebuyers.
+                </p>
+                <p className="wow fadeInUp" data-wow-delay=".45s">
+                  National Builders is a visionary real estate development firm specialising in architecturally distinct residential and mixed-use projects in Navi Mumbai and Kerala. Our dedicated homecare department is available 24/7 to assist customers, and our after-sales team attends to all repair and maintenance needs.
+                </p>
+
+                <div className="row g-3 mt-2 wow fadeInUp" data-wow-delay=".5s">
+                  {[
+                    ["fa-solid fa-shield-halved", "RERA Approved", "K-RERA/PRJ/ERN/032/2023"],
+                    ["fa-solid fa-building", "Premium Location", "Heart of Edappally"],
+                    ["fa-solid fa-star", "Luxury Lifestyle", "3 & 4 BHK Apartments"]
+                  ].map(([icon, label, value]) => (
+                    <div key={label} className="col-sm-4">
+                      <div className="about-badge">
+                        <i className={`${icon} fa-2x id-color mb-2 d-block`} />
+                        <div className="fw-600" style={{ fontSize: "13px" }}>{label}</div>
+                        <div className="opacity-60" style={{ fontSize: "11px", marginTop: "3px" }}>{value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <a className="btn-main fx-slide mt-4" href="#section-contact">
+                  <span>For More Details</span>
+                </a>
+              </div>
+
             </div>
           </div>
         </section>
@@ -244,12 +276,9 @@ export default function HomePage() {
                     Home Overview
                   </div>
                   <h2 className="wow fadeInUp" data-wow-delay=".4s">
-                    A Perfect Balance of Comfort, Design, and Everyday Convenience.
+                A Premium home for your comfort and convenience.
                   </h2>
-                  {/* <p className="wow fadeInUp" data-wow-delay=".6s">
-                    Non anim in pariatur in ex excepteur commodo do officia amet incididunt ullamco nostrud aliquip
-                    minim magna esse dolore..
-                  </p> */}
+                
 
                   <a className="btn-main fx-slide" href="#section-contact">
                     <span>Request a Callback</span>
@@ -260,20 +289,24 @@ export default function HomePage() {
               <div className="col-lg-6">
                 <div className="row g-4">
                   {[
-                    ["fa-solid fa-tree", "Terrace Garden & Party Area", "Enjoy stunning views and host memorable moments in a premium rooftop setting."],
-                    ["fa-solid fa-dumbbell", "Fully Equipped Fitness Centre", "Stay active and healthy with a modern gym featuring essential equipment for your daily workouts."],
-                    ["fa-solid fa-child-reaching", "Children’s Play Area", "A safe and engaging space where children can play, explore, and enjoy their time freely."],
-                    ["fa-solid fa-bolt", "24/7 Power Backup", "Reliable power backup system ensuring uninterrupted comfort at all times."],
-                    ["fa-solid fa-droplet", "Rainwater Harvesting System", "Eco-friendly water management system designed to support sustainable living."],
-                    ["fa-solid fa-people-roof", "Multipurpose Hall", "A flexible space ideal for events, celebrations, and community gatherings."]
+                    ["fa-solid fa-person-swimming", "Rooftop Swimming Pool", "Relax and unwind with a rooftop pool offering a refreshing experience and open views."],
+                    ["fa-solid fa-champagne-glasses", "Terrace Garden & Party Area", "A pleasant rooftop space designed for small gatherings, celebrations, and relaxed evenings."],
+                    ["fa-solid fa-dumbbell", "Fully Equipped Fitness Centre", "A well-designed gym space to help you stay active and maintain a healthy routine."],
+                    ["fa-solid fa-child-reaching", "Children’s Play Area", "A safe and comfortable area where children can play and spend time freely."],
+                    ["fa-solid fa-people-roof", "Multipurpose Hall", "A convenient space for functions, meetings, and community activities."],
+                    ["fa-solid fa-gamepad", "Indoor Games Area", "A dedicated space for indoor activities and leisure time with family and friends."],
+                    ["fa-solid fa-bolt", "24/7 Power Backup", "Ensures continuous power supply for essential services and common areas."],
+                    ["fa-solid fa-shield-halved", "Advanced Security System", "CCTV surveillance and controlled access for a safe and secure living environment."],
+                    ["fa-solid fa-charging-station", "EV Charging Station", "Facility for electric vehicle charging to support modern living needs."],
+                    ["fa-solid fa-couch", "Visitor’s Lounge", "A comfortable space to welcome and attend guests."],
+                    ["fa-solid fa-bed", "Guest Room Facility", "Provision for guest stay within the premises for added convenience."],
+                    ["fa-solid fa-droplet", "Rainwater Harvesting System", "A sustainable solution for efficient water management."]
                   ].map(([icon, title, description]) => (
-                    <div key={title} className="col-md-6">
-                      <div className="h-100 rounded-1">
-                        <i className={`${icon} fa-3x id-color mb-4 wow scaleIn d-block`} />
-                        <div className="relative wow fadeInUp">
-                          <h4>{title}</h4>
-                          <p className="mb-0">{description}</p>
-                        </div>
+                    <div key={title} className="col-md-6 wow fadeInUp">
+                      <div className="facility-card">
+                        <i className={`${icon} id-color d-block`} />
+                        <h4>{title}</h4>
+                        <p>{description}</p>
                       </div>
                     </div>
                   ))}
@@ -283,113 +316,84 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="section-rooms" className="bg-dark section-dark text-light">
+
+        <section id="section-projects" className="bg-dark section-dark text-light">
           <div className="container">
             <div className="row g-4 gx-5 justify-content-center">
-              <div className="col-lg-6 text-center">
+              <div className="col-lg-7 text-center">
                 <div className="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">
-                  Room Details
+                  Our Portfolio
                 </div>
                 <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                  Discover Rooms
+                  Latest Projects
                 </h2>
-              </div>
-            </div>
-            <div className="row g-4 gx-5 justify-content-center wow fadeInUp">
-              <div className="col-lg-12">
-                <div className="de-tab pill">
-                  <ul className="d-tab-nav mb-4">
-                    {roomTabs.map((room, index) => (
-                      <li key={room.name} className={index === 0 ? "active-tab" : undefined}>
-                        {room.name}
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="d-tab-content pt-3">
-                    {roomTabs.map((room) => (
-                      <li key={room.name}>
-                        <div className="row g-4 justify-content-between">
-                          <div className="col-lg-4">
-                            <div className="relative bg-dark-2 rounded-1 h-100">
-                              <h3 className="fs-32 mb-4 p-40">{room.name}</h3>
-                              <div className="abs p-sm-relative bottom-0 p-40 start-0 w-100">
-                                <p className="mb-0">{room.description}</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="col-lg-8">
-                            <div className="relative">
-                              <div className="bg-blur abs p-2 bottom-0 rounded-2 px-4 m-4 text-white">
-                                <h4 className="mb-0">{room.area}</h4>
-                              </div>
-                              <img src={room.image} className="w-100 rounded-1" alt={room.name} />
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="section-gallery" className="bg-color-op-1">
-          <div className="container">
-            <div className="row g-4 gx-5 justify-content-center">
-              <div className="col-lg-6 text-center">
-                <div className="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">
-                  Dicover Gallery
-                </div>
-                <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                  Exterior &amp; Interior
-                </h2>
+                <p className="wow fadeInUp opacity-75" data-wow-delay=".3s">
+                  A legacy of 135+ landmark developments built on trust, quality, and enduring vision across Kerala and Navi Mumbai.
+                </p>
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-md-12 text-center">
-                <ul id="filters" className="wow fadeInUp" data-wow-delay="0s">
-                  <li>
-                    <a href="#" data-filter="*" className="selected">
-                      View All
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" data-filter=".exterior">
-                      Exterior
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" data-filter=".interior">
-                      Interior
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" data-filter=".facilities">
-                      Facilities
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="gallery" className="row g-3 wow fadeInUp" data-wow-delay=".3s">
-              {galleryItems.map(([type, image]) => (
-                <div key={image} className={`col-md-4 col-sm-6 col-12 item ${type}`}>
-                  <a href={image} className="image-popup d-block hover">
-                    <div className="relative overflow-hidden rounded-1">
-                      <div className="absolute start-0 w-100 hover-op-1 p-5 abs-middle z-2 text-center text-white z-3">
-                        View
-                      </div>
-                      <div className="absolute start-0 w-100 h-100 overlay-dark-7 hover-op-1 z-2" />
-                      <img src={image} className="w-100 hover-scale-1-2" alt="" />
+            <div className="row g-3 wow fadeInUp" data-wow-delay=".2s">
+              {/* Featured large card */}
+              <div className="col-lg-6">
+                <div
+                  className="position-relative overflow-hidden rounded-1 hover"
+                  style={{ height: "540px" }}
+                >
+                  <img
+                    src={latestProjects[0].image}
+                    alt={latestProjects[0].name}
+                    className="hover-scale-1-1"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s ease" }}
+                  />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.25) 55%, transparent 100%)" }} />
+                  <div style={{ position: "absolute", top: "20px", right: "20px" }}>
+                    <span style={{ background: "var(--primary-color, #c9a96e)", color: "#fff", fontSize: "11px", fontWeight: 700, letterSpacing: "1px", padding: "5px 14px", borderRadius: "2px", textTransform: "uppercase" }}>
+                      {latestProjects[0].status}
+                    </span>
+                  </div>
+                  <div style={{ position: "absolute", bottom: "32px", left: "32px", right: "32px" }}>
+                    <div style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px", marginBottom: "6px", display: "flex", alignItems: "center", gap: "6px" }}>
+                      <i className="fa-solid fa-location-dot" style={{ color: "var(--primary-color, #c9a96e)" }} />
+                      {latestProjects[0].location}
                     </div>
-                  </a>
+                    <h3 className="text-white mb-1">{latestProjects[0].name}</h3>
+                    <div style={{ color: "var(--primary-color, #c9a96e)", fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px" }}>{latestProjects[0].type}</div>
+                  </div>
                 </div>
-              ))}
+              </div>
+
+              {/* 3 stacked cards */}
+              <div className="col-lg-6 d-flex flex-column gap-3">
+                {latestProjects.slice(1).map((project) => (
+                  <div
+                    key={project.name}
+                    className="position-relative overflow-hidden rounded-1 hover flex-grow-1"
+                    style={{ minHeight: "164px" }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="hover-scale-1-1"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: 0, left: 0, transition: "transform 0.5s ease" }}
+                    />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }} />
+                    <div style={{ position: "absolute", top: "16px", right: "16px" }}>
+                      <span style={{ background: "var(--primary-color, #c9a96e)", color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "1px", padding: "4px 10px", borderRadius: "2px", textTransform: "uppercase" }}>
+                        {project.status}
+                      </span>
+                    </div>
+                    <div style={{ position: "absolute", bottom: "22px", left: "28px", right: "100px" }}>
+                      <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", marginBottom: "5px", display: "flex", alignItems: "center", gap: "5px" }}>
+                        <i className="fa-solid fa-location-dot" style={{ color: "var(--primary-color, #c9a96e)", fontSize: "11px" }} />
+                        {project.location}
+                      </div>
+                      <h5 className="text-white mb-1" style={{ lineHeight: 1.3 }}>{project.name}</h5>
+                      <div style={{ color: "var(--primary-color, #c9a96e)", fontSize: "12px", fontWeight: 600, letterSpacing: "0.5px" }}>{project.type}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -406,15 +410,15 @@ export default function HomePage() {
                     Home Floorplans
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay=".6s">
-                    National Royal Palace offers premium 3 & 4 BHK luxury apartments at Pathadipalam, Edappally —
-                    thoughtfully crafted with contemporary design and superior construction quality for refined urban living.
+                    National Majestic offers ultra-premium 3 & 4 BHK apartments in the heart of Edappally, Kochi —
+                    combining modern architecture, premium finishes, and world-class amenities for a truly superlative lifestyle.
                   </p>
 
                   <div className="relative overflow-hidden">
                     {floorplanRows.map(([label, value], index) => (
                       <div key={label} className={`d-flex px-4 py-2 ${index % 2 === 0 ? "bg-dark-2" : ""}`}>
-                        <div className="w-60">{label}</div>
-                        <div className="w-40 fw-600">{value}</div>
+                        <div style={{ flex: "0 0 48%", opacity: 0.75 }}>{label}</div>
+                        <div className="fw-600" style={{ flex: "1 1 52%", wordBreak: "break-word" }}>{value}</div>
                       </div>
                     ))}
                   </div>
@@ -424,23 +428,12 @@ export default function HomePage() {
               <div className="col-lg-8">
                 <div className="owl-carousel owl-theme owl-single-dots">
                   {[
-                    ["14TH-FLOOR-PLAN-scaled.jpg", "14th Floor Plan"],
-                    ["TYPICAL-LAYOUT-scaled.jpg", "Typical Layout"],
-                    ["FIRST-FLOOR-LAYOUT-1-scaled.jpg", "First Floor Layout"],
-                    ["GROUND-FLOOR-PLAN-2-scaled.jpg", "Ground Floor Plan"],
-                    ["BASEMENT-FLOOR-PLAN-scaled.jpg", "Basement Floor Plan"],
-                    ["TERRACE-FLOOR-PLAN-scaled.jpg", "Terrace Floor Plan"],
-                    ["SWIMMING-POOL-LEVEL-PLAN-2-scaled.jpg", "Swimming Pool Level"],
-                    ["FLAT-A-1-1-scaled.jpg", "Flat A-1"],
-                    ["FLAT-A-2-scaled.jpg", "Flat A-2"],
-                    ["FLAT-B-2-scaled.jpg", "Flat B"],
-                    ["FLAT-B1-scaled.jpg", "Flat B-1"],
-                    ["FLAT-C-2-scaled.jpg", "Flat C"],
-                    ["FLAT-C1-scaled.jpg", "Flat C-1"],
-                    ["FLAT-D-2-scaled.jpg", "Flat D"],
-                    ["FLAT-D1-scaled.jpg", "Flat D-1"],
-                    ["FLAT-E-2-scaled.jpg", "Flat E"],
-                    ["FLAT-F-2-scaled.jpg", "Flat F"]
+                    ["floor-1.jpg", "Basement Floor Plan"],
+                    ["floor-2.jpg", "Ground Floor Plan"],
+                    ["floor-3.jpg", "1st Floor Plan"],
+                    ["floor-4.jpg", "Typical Floor (2nd – 10th)"],
+                    ["floor-5.jpg", "11th Floor Plan"],
+                    ["floor-6.jpg", "12th Floor Plan"]
                   ].map(([file, label]) => (
                     <div key={file} className="relative">
                       <img
@@ -462,9 +455,9 @@ export default function HomePage() {
 
             <div className="row g-3">
               {[
-                ["Plot Area", "/images/svg/size.svg", "1661 – 2555 sqft"],
+                ["Plot Area", "/images/svg/size.svg", "2124 – 3917 sqft"],
                 ["Bedrooms", "/images/svg/bed.svg", "3 – 4 BHK"],
-                ["Total Units", "/images/svg/bath.svg", "83 Units"],
+                ["Total Units", "/images/svg/bath.svg", "20 Units"],
                 ["Parking Slots", "/images/svg/car.svg", "1 Per Unit"]
               ].map(([title, icon, value]) => (
                 <div key={title} className="col-md-3 col-6">
@@ -481,51 +474,157 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section>
-          <div className="container relative z-2">
-            <div className="row g-4 gx-5 justify-content-center">
-              <div className="col-lg-6 text-center">
-                <div className="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">
-                  Near by Places
-                </div>
-                <h2 className="wow fadeInUp" data-wow-delay=".2s">
-                  Highlights Nearby
-                </h2>
+        <section id="section-nearby" className="bg-dark section-dark text-light" style={{ backgroundImage: "radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.07) 0%, transparent 65%)" }}>
+          <div className="container">
+
+            {/* Heading */}
+            <div className="row justify-content-between align-items-end mb-5">
+              <div className="col-lg-6 wow fadeInLeft" data-wow-delay=".0s">
+                <div className="subtitle s2 mb-3">Near by Places</div>
+                <h2 className="mb-0">Highlights Nearby</h2>
+              </div>
+              <div className="col-lg-5 wow fadeInRight" data-wow-delay=".2s">
+                <p className="mb-0 opacity-75">
+                  Strategically situated at the heart of Edappally — Kochi's most connected address — with premium destinations just minutes away.
+                </p>
               </div>
             </div>
 
-            <div className="row g-4">
+            {/* Category cards row */}
+            <div className="row g-3">
               {[
-                ["LuLu Mall, Edappally", "2 km", "/assets/images/nearby/lulu-mall.jpg"],
-                ["Amrita Institute of Medical Sciences", "3 km", "/assets/images/nearby/aims-kochi.jpg"],
-                ["Amrita Vishwa Vidyapeetham", "3 km", "/assets/images/nearby/amrita-campus.jpg"],
-                ["Edappally Metro Station", "1 km", "/assets/images/nearby/edappally-metro.jpg"]
-              ].map(([label, distance, image]) => (
-                <div key={label} className="col-lg-3 col-md-6 col-sm-6 col-12">
-                  <div className="overflow-hidden rounded-1 text-light wow zoomIn" data-wow-delay=".0s" style={{ height: "280px", position: "relative" }}>
-                    <img
-                      src={image}
-                      alt={label}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    />
-                    <div style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, transparent 100%)",
-                      zIndex: 1
-                    }} />
-                    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px", zIndex: 2 }}>
-                      <h5 className="mb-1 text-white lh-sm" style={{ wordBreak: "break-word" }}>{label}</h5>
-                      <span className="text-white fs-14 fw-500 opacity-75">{distance}</span>
+                {
+                  icon: "fa-solid fa-bag-shopping",
+                  category: "Shopping &\nEntertainment",
+                  color: "#e8a838",
+                  items: [["LuLu Hypermarket", "0.6 km"], ["Reliance Digital", "0.4 km"]]
+                },
+                {
+                  icon: "fa-solid fa-graduation-cap",
+                  category: "Educational\nInstitutions",
+                  color: "#4e9fd4",
+                  items: [["Amrita School of Business", "2.9 km"]]
+                },
+                {
+                  icon: "fa-solid fa-hospital",
+                  category: "Healthcare",
+                  color: "#e05c5c",
+                  items: [["Amrita Institute of Medical Sciences", "Nearby"]]
+                },
+                {
+                  icon: "fa-solid fa-road",
+                  category: "Connectivity",
+                  color: "#5fc98e",
+                  items: [["Edappally Junction", "Easy access"], ["NH 66 & NH 47", "Excellent"]]
+                },
+                {
+                  icon: "fa-solid fa-bus",
+                  category: "Transport",
+                  color: "#a57fe8",
+                  items: [["Bus Stops", "100 m"], ["Railway Station", "~4 km"]]
+                },
+                {
+                  icon: "fa-solid fa-city",
+                  category: "City Access",
+                  color: "#4ec8c8",
+                  items: [["Kochi City Centre", "Well connected"], ["Metro & Road", "Excellent"]]
+                }
+              ].map(({ icon, category, color, items }, idx) => (
+                <div key={category} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 0.08}s`}>
+                  <div
+                    className="h-100 rounded-1 position-relative overflow-hidden"
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      padding: "28px 28px 24px",
+                      transition: "border-color 0.3s, background 0.3s"
+                    }}
+                  >
+                    {/* Accent bar */}
+                    <div style={{ position: "absolute", top: 0, left: 0, width: "4px", height: "100%", background: color, borderRadius: "4px 0 0 4px" }} />
+
+                    {/* Icon + category */}
+                    <div className="d-flex align-items-center gap-3 mb-4">
+                      <div
+                        style={{
+                          width: "52px", height: "52px", borderRadius: "12px",
+                          background: `${color}22`,
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          flexShrink: 0
+                        }}
+                      >
+                        <i className={icon} style={{ color, fontSize: "22px" }} />
+                      </div>
+                      <h5 className="mb-0 lh-sm" style={{ whiteSpace: "pre-line" }}>{category}</h5>
+                    </div>
+
+                    {/* Items */}
+                    <div className="d-flex flex-column gap-2">
+                      {items.map(([name, dist]) => (
+                        <div
+                          key={name}
+                          className="d-flex align-items-center justify-content-between"
+                          style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", paddingBottom: "10px" }}
+                        >
+                          <div className="d-flex align-items-center gap-2">
+                            <i className="fa-solid fa-circle-dot" style={{ color, fontSize: "8px", flexShrink: 0 }} />
+                            <span style={{ fontSize: "14px", opacity: 0.85 }}>{name}</span>
+                          </div>
+                          <span
+                            style={{
+                              fontSize: "12px", fontWeight: 700, letterSpacing: "0.5px",
+                              background: `${color}22`, color,
+                              padding: "3px 10px", borderRadius: "20px", whiteSpace: "nowrap"
+                            }}
+                          >
+                            {dist}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Map strip */}
+            <div className="row mt-5 wow fadeInUp" data-wow-delay=".2s">
+              <div className="col-12">
+                <div className="rounded-1 overflow-hidden position-relative" style={{ height: "320px" }}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8765937438!2d76.30192!3d10.02735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d5a9e4f23d5%3A0x7e3c84f703b8e8c!2sEdappally%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1699999999999"
+                    width="100%"
+                    height="320"
+                    style={{ border: 0, display: "block", filter: "invert(90%) hue-rotate(180deg) saturate(0.8)" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="National Majestic Location"
+                  />
+                  <div
+                    style={{
+                      position: "absolute", top: "20px", left: "20px",
+                      background: "rgba(0,0,0,0.85)", borderRadius: "8px",
+                      padding: "12px 18px", backdropFilter: "blur(8px)",
+                      border: "1px solid rgba(255,255,255,0.12)"
+                    }}
+                  >
+                    <div className="d-flex align-items-center gap-2">
+                      <i className="fa-solid fa-location-dot id-color" />
+                      <div>
+                        <div className="fw-700 text-white" style={{ fontSize: "14px" }}>National Majestic</div>
+                        <div className="opacity-75" style={{ fontSize: "12px" }}>Edappally, Kochi, Kerala</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
-        <section aria-label="section" className="p-0 section-dark">
+        {/* <section aria-label="section" className="p-0 section-dark">
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12">
@@ -543,7 +642,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="section-contact">
           <div className="container">
@@ -637,7 +736,7 @@ export default function HomePage() {
             {/* Brand + About + Social */}
             <div className="col-12 col-md-6 col-lg-4">
               <img
-                src="/assets/images/national-royal-palace-logo.png"
+                src="/assets/images/national-majestic-logo.png"
                 className="mb-4"
                 alt="National Royal Palace"
                 style={{ maxWidth: "160px", width: "100%", height: "auto" }}
@@ -660,9 +759,10 @@ export default function HomePage() {
               <h5 className="mb-3 mb-lg-4">Quick Links</h5>
               <ul className="list-unstyled mb-0" style={{ lineHeight: "2.4" }}>
                 <li><a href="#" className="text-white opacity-75 text-decoration-none">Home</a></li>
+                <li><a href="#section-about" className="text-white opacity-75 text-decoration-none">About</a></li>
                 <li><a href="#section-overview" className="text-white opacity-75 text-decoration-none">Overview</a></li>
-                <li><a href="#section-rooms" className="text-white opacity-75 text-decoration-none">Rooms</a></li>
-                <li><a href="#section-gallery" className="text-white opacity-75 text-decoration-none">Gallery</a></li>
+
+                <li><a href="#section-projects" className="text-white opacity-75 text-decoration-none">Projects</a></li>
                 <li><a href="#section-floorplan" className="text-white opacity-75 text-decoration-none">Floorplan</a></li>
                 <li><a href="#section-contact" className="text-white opacity-75 text-decoration-none">Contact</a></li>
               </ul>
