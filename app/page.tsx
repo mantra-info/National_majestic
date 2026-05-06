@@ -1,4 +1,7 @@
 import Script from "next/script";
+import TestimonialsSection from "./TestimonialsSection";
+import CallbackPopup from "./CallbackPopup";
+import ContactForm from "./ContactForm";
 
 
 const latestProjects = [
@@ -101,6 +104,11 @@ export default function HomePage() {
                             </a>
                           </li>
                           <li>
+                            <a className="menu-item" href="#section-testimonials">
+                              Testimonials
+                            </a>
+                          </li>
+                          <li>
                             <a className="menu-item" href="#section-contact">
                               Contact
                             </a>
@@ -110,7 +118,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="de-flex-col">
-                      <a className="btn-main fx-slide w-100" href="#section-contact">
+                      <a className="btn-main fx-slide w-100" href="#" data-callback-modal="true">
                         <span>Request a Callback</span>
                       </a>
 
@@ -125,7 +133,7 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section id="section-hero" className="text-light no-top no-bottom relative overflow-hidden z-1000">
+        <section id="section-hero" className="text-light no-top no-bottom relative overflow-hidden z-1000" style={{ minHeight: "100vh" }}>
 
           {/* Centre text overlay */}
           <div className="abs w-100 z-2 text-center" style={{ top: "58%", transform: "translateY(-50%)" }}>
@@ -138,7 +146,7 @@ export default function HomePage() {
                 Ultra-Premium 3 &amp; 4 BHK Apartments
               </p>
               <div className="wow fadeInUp d-flex gap-3 justify-content-center flex-wrap" data-wow-delay=".35s">
-                <a className="btn-main fx-slide" href="#section-contact">
+                <a className="btn-main fx-slide" href="#" data-callback-modal="true">
                   <span>Request a Callback</span>
                 </a>
                 <a className="btn-main btn-line fx-slide" href="#section-about">
@@ -148,28 +156,47 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Background swiper */}
-          <div className="vertical-center">
-            <div className="swiper">
-              <div className="swiper-wrapper">
-                {["gbp11.jpg", "Royal-Palace_Grid_Post_Web-banner.jpg.jpeg"].map((image) => (
-                  <div key={image} className="swiper-slide">
-                    <div
-                      className="swiper-inner"
-                      data-bgimage={`url(/assets/images/${image})`}
-                      style={{
-                        backgroundImage: `url(/assets/images/${image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center center",
-                        backgroundRepeat: "no-repeat"
-                      }}
-                    >
-                      <div className="sw-overlay" style={{ background: "rgba(0,0,0,0.45)" }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Background video – desktop */}
+          <div
+            className="sm-hide"
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
+              overflow: "hidden"
+            }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/assets/images/majestic-hero-1.jpg"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block"
+              }}
+            >
+              <source src="https://nationalbuilders.in/wp-content/uploads/2025/08/MAJESTIC-NATIONL.mp4" type="video/mp4" />
+            </video>
+            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.42)" }} />
+          </div>
+
+          {/* Background image – mobile/tablet fallback (sm-hide hides video at ≤992px) */}
+          <div
+            className="d-block d-lg-none"
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
+              backgroundImage: "url(/assets/images/majestic-hero-1.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "65% center"
+            }}
+          >
+            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
           </div>
 
           {/* Bottom info bar */}
@@ -258,7 +285,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <a className="btn-main fx-slide mt-4" href="#section-contact">
+                <a className="btn-main fx-slide mt-4" href="#" data-callback-modal="true">
                   <span>For More Details</span>
                 </a>
               </div>
@@ -280,7 +307,7 @@ export default function HomePage() {
                   </h2>
                 
 
-                  <a className="btn-main fx-slide" href="#section-contact">
+                  <a className="btn-main fx-slide" href="#" data-callback-modal="true">
                     <span>Request a Callback</span>
                   </a>
                 </div>
@@ -644,6 +671,8 @@ export default function HomePage() {
           </div>
         </section> */}
 
+        <TestimonialsSection />
+
         <section id="section-contact">
           <div className="container">
             <div className="row g-4 justify-content-center">
@@ -673,57 +702,7 @@ export default function HomePage() {
               </div>
 
               <div className="col-md-5">
-                <form name="callbackForm" id="callback_form" method="post" action="#">
-                  <div className="row g-4">
-                    <div className="col-md-6">
-                      <input type="text" name="name" id="name" className="form-control" placeholder="Your Name" required />
-                    </div>
-
-                    <div className="col-md-6">
-                      <input type="tel" name="phone" id="phone" className="form-control" placeholder="Phone Number" required />
-                    </div>
-
-                    <div className="col-md-6">
-                      <input type="email" name="email" id="email" className="form-control" placeholder="Your Email" />
-                    </div>
-
-                    <div className="col-md-6">
-                      <div className="relative">
-                        <select name="best_time" id="best_time" className="form-control" defaultValue="">
-                          <option value="" disabled>Best Time to Call</option>
-                          <option value="morning">Morning (9 AM – 12 PM)</option>
-                          <option value="afternoon">Afternoon (12 PM – 3 PM)</option>
-                          <option value="evening">Evening (3 PM – 6 PM)</option>
-                          <option value="anytime">Anytime</option>
-                        </select>
-                        <i className="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down" />
-                      </div>
-                    </div>
-
-                    <div className="col-md-12">
-                      <textarea
-                        name="message"
-                        id="message"
-                        className="form-control h-150px"
-                        placeholder="Your Message (optional)"
-                      ></textarea>
-                    </div>
-
-                    <div className="col-md-12">
-                      <div className="text-start">
-                        <div id="submit">
-                          <input type="submit" id="send_message" value="Send Message" className="btn-main" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <div id="success_message_col" className="success">
-                  Your message has been sent successfully. Refresh this page if you want to send more messages.
-                </div>
-                <div id="error_message" className="error">
-                  Sorry there was an error sending your form.
-                </div>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -765,6 +744,7 @@ export default function HomePage() {
 
                 <li><a href="#section-projects" className="text-white opacity-75 text-decoration-none">Projects</a></li>
                 <li><a href="#section-floorplan" className="text-white opacity-75 text-decoration-none">Floorplan</a></li>
+                <li><a href="#section-testimonials" className="text-white opacity-75 text-decoration-none">Testimonials</a></li>
                 <li><a href="#section-contact" className="text-white opacity-75 text-decoration-none">Contact</a></li>
               </ul>
             </div>
@@ -822,6 +802,8 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      <CallbackPopup />
 
       <Script src="/assets/js/vendors.js" strategy="afterInteractive" />
       <Script src="/assets/js/designesia.js" strategy="afterInteractive" />
