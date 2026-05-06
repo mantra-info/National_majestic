@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
              alt="National Majestic" style="max-width:140px;margin-bottom:24px" />
         <h2 style="color:#fff;margin:0 0 4px">New Callback Request</h2>
         <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0 0 24px">
-          Submitted via nationalmajestic.in
+          Submitted via majestic.ads.nationalbuilders.in on ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
         </p>
         <table style="width:100%;border-collapse:collapse;font-size:14px">
           <tr>
