@@ -10,30 +10,36 @@ const latestProjects = [
     location: "Ernakulam, Kerala",
     type: "Premium Apartments",
     image: "/assets/images/gallery/glry-1.jpg",
-    status: "Completed"
+    status: "Ongoing"
   },
   {
     name: "National Shalom",
     location: "Thiruvalla, Kerala",
     type: "Luxury Residences",
     image: "/assets/images/gallery/glry-2.jpg",
-    status: "Completed"
+    status: "Sold Out"
   },
   {
     name: "National Treedom Park Tower 2",
     location: "Vyttila, Kochi",
     type: "Premium Apartments",
     image: "/assets/images/gallery/glry-3.jpg",
-    status: "Completed"
+    status: "Ready to Move"
   },
   {
     name: "National Kingdom",
     location: "Palarivattom, Kochi",
     type: "Luxury Residences",
     image: "/assets/images/gallery/glry-4.jpg",
-    status: "Completed"
+    status: "Ready to Move"
   }
 ];
+
+function statusBadgeColor(status: string) {
+  if (status === "Sold Out") return "#e05c5c";
+  if (status === "Ready to Move") return "#5fc98e";
+  return "var(--primary-color, #c9a96e)";
+}
 
 const floorplanRows = [
   ["Apartment Type", "3 & 4 BHK"],
@@ -296,50 +302,50 @@ export default function HomePage() {
 
         <section id="section-overview">
           <div className="container">
-            <div className="row g-4 justify-content-between">
-              <div className="col-lg-5">
-                <div className="ps-lg-3">
-                  <div className="subtitle wow fadeInUp" data-wow-delay=".2s">
-                    Home Overview
-                  </div>
-                  <h2 className="wow fadeInUp" data-wow-delay=".4s">
-                A Premium home for your comfort and convenience.
-                  </h2>
-                
 
-                  <a className="btn-main fx-slide" href="#" data-callback-modal="true">
-                    <span>Request a Callback</span>
-                  </a>
-                </div>
-              </div>
-
+            {/* Heading row */}
+            <div className="row g-4 justify-content-between align-items-center mb-5">
               <div className="col-lg-6">
-                <div className="row g-4">
-                  {[
-                    ["fa-solid fa-person-swimming", "Rooftop Swimming Pool", "Relax and unwind with a rooftop pool offering a refreshing experience and open views."],
-                    ["fa-solid fa-champagne-glasses", "Terrace Garden & Party Area", "A pleasant rooftop space designed for small gatherings, celebrations, and relaxed evenings."],
-                    ["fa-solid fa-dumbbell", "Fully Equipped Fitness Centre", "A well-designed gym space to help you stay active and maintain a healthy routine."],
-                    ["fa-solid fa-child-reaching", "Children’s Play Area", "A safe and comfortable area where children can play and spend time freely."],
-                    ["fa-solid fa-people-roof", "Multipurpose Hall", "A convenient space for functions, meetings, and community activities."],
-                    ["fa-solid fa-gamepad", "Indoor Games Area", "A dedicated space for indoor activities and leisure time with family and friends."],
-                    ["fa-solid fa-bolt", "24/7 Power Backup", "Ensures continuous power supply for essential services and common areas."],
-                    ["fa-solid fa-shield-halved", "Advanced Security System", "CCTV surveillance and controlled access for a safe and secure living environment."],
-                    ["fa-solid fa-charging-station", "EV Charging Station", "Facility for electric vehicle charging to support modern living needs."],
-                    ["fa-solid fa-couch", "Visitor’s Lounge", "A comfortable space to welcome and attend guests."],
-                    ["fa-solid fa-bed", "Guest Room Facility", "Provision for guest stay within the premises for added convenience."],
-                    ["fa-solid fa-droplet", "Rainwater Harvesting System", "A sustainable solution for efficient water management."]
-                  ].map(([icon, title, description]) => (
-                    <div key={title} className="col-md-6 wow fadeInUp">
-                      <div className="facility-card">
-                        <i className={`${icon} id-color d-block`} />
-                        <h4>{title}</h4>
-                        <p>{description}</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="subtitle wow fadeInUp" data-wow-delay=".2s">
+                  Home Overview
                 </div>
+                <h2 className="wow fadeInUp mb-0" data-wow-delay=".4s">
+                  A Premium home for your comfort and convenience.
+                </h2>
+              </div>
+              <div className="col-lg-4 text-lg-end wow fadeInUp" data-wow-delay=".5s">
+                <a className="btn-main fx-slide" href="#" data-callback-modal="true">
+                  <span>Request a Callback</span>
+                </a>
               </div>
             </div>
+
+            {/* Amenity cards grid */}
+            <div className="row g-4">
+              {[
+                ["fa-solid fa-person-swimming", "Rooftop Swimming Pool", "Relax and unwind with a rooftop pool offering a refreshing experience and open views."],
+                ["fa-solid fa-champagne-glasses", "Terrace Garden & Party Area", "A pleasant rooftop space designed for small gatherings, celebrations, and relaxed evenings."],
+                ["fa-solid fa-dumbbell", "Fully Equipped Fitness Centre", "A well-designed gym space to help you stay active and maintain a healthy routine."],
+                ["fa-solid fa-child-reaching", "Children’s Play Area", "A safe and comfortable area where children can play and spend time freely."],
+                ["fa-solid fa-people-roof", "Multipurpose Hall", "A convenient space for functions, meetings, and community activities."],
+                ["fa-solid fa-gamepad", "Indoor Games Area", "A dedicated space for indoor activities and leisure time with family and friends."],
+                ["fa-solid fa-bolt", "24/7 Power Backup", "Ensures continuous power supply for essential services and common areas."],
+                ["fa-solid fa-shield-halved", "Advanced Security System", "CCTV surveillance and controlled access for a safe and secure living environment."],
+                ["fa-solid fa-charging-station", "EV Charging Station", "Facility for electric vehicle charging to support modern living needs."],
+                ["fa-solid fa-couch", "Visitor’s Lounge", "A comfortable space to welcome and attend guests."],
+                ["fa-solid fa-bed", "Guest Room Facility", "Provision for guest stay within the premises for added convenience."],
+                ["fa-solid fa-droplet", "Rainwater Harvesting System", "A sustainable solution for efficient water management."]
+              ].map(([icon, title, description]) => (
+                <div key={title} className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
+                  <div className="facility-card">
+                    <i className={`${icon} id-color d-block`} />
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         </section>
 
@@ -375,7 +381,7 @@ export default function HomePage() {
                   />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.25) 55%, transparent 100%)" }} />
                   <div style={{ position: "absolute", top: "20px", right: "20px" }}>
-                    <span style={{ background: "var(--primary-color, #c9a96e)", color: "#fff", fontSize: "11px", fontWeight: 700, letterSpacing: "1px", padding: "5px 14px", borderRadius: "2px", textTransform: "uppercase" }}>
+                    <span style={{ background: statusBadgeColor(latestProjects[0].status), color: "#fff", fontSize: "11px", fontWeight: 700, letterSpacing: "1px", padding: "5px 14px", borderRadius: "2px", textTransform: "uppercase" }}>
                       {latestProjects[0].status}
                     </span>
                   </div>
@@ -406,11 +412,11 @@ export default function HomePage() {
                     />
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%)" }} />
                     <div style={{ position: "absolute", top: "16px", right: "16px" }}>
-                      <span style={{ background: "var(--primary-color, #c9a96e)", color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "1px", padding: "4px 10px", borderRadius: "2px", textTransform: "uppercase" }}>
+                      <span style={{ background: statusBadgeColor(project.status), color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "1px", padding: "4px 10px", borderRadius: "2px", textTransform: "uppercase" }}>
                         {project.status}
                       </span>
                     </div>
-                    <div style={{ position: "absolute", bottom: "22px", left: "28px", right: "100px" }}>
+                    <div style={{ position: "absolute", bottom: "22px", left: "28px", right: "28px" }}>
                       <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", marginBottom: "5px", display: "flex", alignItems: "center", gap: "5px" }}>
                         <i className="fa-solid fa-location-dot" style={{ color: "var(--primary-color, #c9a96e)", fontSize: "11px" }} />
                         {project.location}
@@ -453,7 +459,7 @@ export default function HomePage() {
               </div>
 
               <div className="col-lg-8">
-                <div className="owl-carousel owl-theme owl-single-dots">
+                <div className="owl-carousel owl-theme owl-single-dots" id="fp-carousel">
                   {[
                     ["floor-1.jpg", "Basement Floor Plan"],
                     ["floor-2.jpg", "Ground Floor Plan"],
@@ -475,28 +481,52 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
 
-            <div className="spacer-double" />
-
-            <div className="row g-3">
-              {[
-                ["Plot Area", "/images/svg/size.svg", "2124 – 3917 sqft"],
-                ["Bedrooms", "/images/svg/bed.svg", "3 – 4 BHK"],
-                ["Total Units", "/images/svg/bath.svg", "20 Units"],
-                ["Parking Slots", "/images/svg/car.svg", "1 Per Unit"]
-              ].map(([title, icon, value]) => (
-                <div key={title} className="col-md-3 col-6">
-                  <div className="bg-dark-2 py-4 rounded-1 text-center">
-                    <h4>{title}</h4>
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={icon} className="w-40px me-3" alt="" />
-                      <div>{value}</div>
-                    </div>
-                  </div>
+                {/* Floor plan navigation buttons */}
+                <div className="d-flex align-items-center justify-content-center gap-3 mt-4 wow fadeInUp" data-wow-delay=".3s">
+                  <button
+                    id="fp-prev"
+                    aria-label="Previous floor plan"
+                    style={{
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.18)",
+                      color: "#fff",
+                      borderRadius: "50%",
+                      width: "44px",
+                      height: "44px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "pointer",
+                      fontSize: "16px",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    <i className="fa-solid fa-chevron-left" />
+                  </button>
+                  <span style={{ fontSize: "13px", opacity: 0.6, letterSpacing: "0.5px" }}>Swipe or click to explore floor plans</span>
+                  <button
+                    id="fp-next"
+                    aria-label="Next floor plan"
+                    style={{
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.18)",
+                      color: "#fff",
+                      borderRadius: "50%",
+                      width: "44px",
+                      height: "44px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "pointer",
+                      fontSize: "16px",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    <i className="fa-solid fa-chevron-right" />
+                  </button>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -803,6 +833,38 @@ export default function HomePage() {
         </div>
       </footer>
 
+      {/* Floating Call + WhatsApp buttons */}
+      <div style={{ position: "fixed", bottom: "24px", right: "20px", zIndex: 9999, display: "flex", flexDirection: "column", gap: "12px" }}>
+        <a
+          href="tel:+919847533355"
+          aria-label="Call us"
+          style={{
+            width: "52px", height: "52px", borderRadius: "50%",
+            background: "#2563eb", color: "#fff",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 4px 16px rgba(37,99,235,0.45)",
+            fontSize: "20px", textDecoration: "none",
+          }}
+        >
+          <i className="fa-solid fa-phone" />
+        </a>
+        <a
+          href="https://wa.me/919847533355"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp us"
+          style={{
+            width: "52px", height: "52px", borderRadius: "50%",
+            background: "#25D366", color: "#fff",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 4px 16px rgba(37,211,102,0.45)",
+            fontSize: "22px", textDecoration: "none",
+          }}
+        >
+          <i className="fa-brands fa-whatsapp" />
+        </a>
+      </div>
+
       <CallbackPopup />
 
       <Script src="/assets/js/vendors.js" strategy="afterInteractive" />
@@ -816,6 +878,17 @@ export default function HomePage() {
             autoclose: true,
             todayHighlight: true
           }).datepicker("update", new Date());
+        });`}
+      </Script>
+      <Script id="fp-nav" strategy="afterInteractive">
+        {`window.addEventListener("load", function () {
+          var prev = document.getElementById("fp-prev");
+          var next = document.getElementById("fp-next");
+          if (prev && next && window.jQuery) {
+            var $owl = window.jQuery("#fp-carousel");
+            prev.addEventListener("click", function () { $owl.trigger("prev.owl.carousel"); });
+            next.addEventListener("click", function () { $owl.trigger("next.owl.carousel"); });
+          }
         });`}
       </Script>
       <Script id="template-load-fix" strategy="afterInteractive">
