@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "National Majestic <onboarding@resend.dev>",
-      to: ["marketingkochi@nationalbuilders.in"],
+      to: ["marketingkochi@nationalbuilders.in", "vyshnav@mantraitsolutions.in"],
       subject: `Callback Request – ${name} (${phone})`,
       html,
       replyTo: email || undefined,
