@@ -72,7 +72,7 @@ export default function HomePage() {
               <div className="col-md-12">
                 <div className="header-inner">
                   <div className="de-flex">
-                    <div className="de-flex-col">
+                    <div className="de-flex-col" style={{ display: "flex", alignItems: "center", gap: "14px" }}>
                       <div id="logo">
                         <a href="/">
                           <img className="logo-main" src="/assets/images/national-majestic-logo.png" alt="National Royal Palace" style={{ maxHeight: "60px", width: "auto" }} />
@@ -80,6 +80,11 @@ export default function HomePage() {
                           <img className="logo-mobile" src="/assets/images/national-majestic-logo.png" alt="National Royal Palace" style={{ maxHeight: "44px", width: "auto" }} />
                         </a>
                       </div>
+                      <img
+                        src="/assets/images/40-years-excellence.png"
+                        alt="40 Years of Excellence"
+                        style={{ height: "52px", width: "52px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                      />
                     </div>
 
                     <div className="de-flex-col">
@@ -240,16 +245,27 @@ export default function HomePage() {
                     alt="National Majestic"
                     style={{ objectFit: "cover", maxHeight: "560px" }}
                   />
-                  {/* Floating stats card */}
-                  {/* <div className="about-stat-card text-light wow fadeInUp" data-wow-delay=".4s">
-                    <div className="d-flex align-items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                      <div className="about-stat-value">135+</div>
-                      <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Landmark<br />Projects</div>
-                    </div>
-                    <div className="d-flex align-items-center gap-3">
-                      <div className="about-stat-value">24/7</div>
-                      <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Homecare<br />Support</div>
-                    </div>
+                  {/* 40 Years of Excellence badge */}
+                  {/* <div
+                    className="wow fadeInUp"
+                    data-wow-delay=".4s"
+                    style={{
+                      position: "absolute",
+                      bottom: "24px",
+                      right: "24px",
+                      width: "140px",
+                      height: "140px",
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+                      border: "3px solid rgba(201,169,110,0.4)",
+                    }}
+                  >
+                    <img
+                      src="/assets/images/40-years-excellence.png"
+                      alt="40 Years of Excellence"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
                   </div> */}
                 </div>
               </div>
