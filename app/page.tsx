@@ -211,10 +211,10 @@ export default function HomePage() {
               <div className="col-lg-12">
                 <div className="d-flex justify-content-between">
                   {[
-                    ["Ultra Premium", "Apartments"],
-                    ["Rooftop", "Swimming Pool"],
-                    ["AC Fitness", "Centre"],
-                    ["Heart of", "Edappally"]
+                    ["40+", "Years Experience"],
+                    ["135+", "Projects"],
+                    ["24/7", "Homecare Support"],
+                    ["Since", "1986"]
                   ].map(([label, sub]) => (
                     <div key={label} className="hero-bar-item">
                       <strong>{label}</strong>
