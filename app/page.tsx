@@ -241,7 +241,7 @@ export default function HomePage() {
                     style={{ objectFit: "cover", maxHeight: "560px" }}
                   />
                   {/* Floating stats card */}
-                  <div className="about-stat-card text-light wow fadeInUp" data-wow-delay=".4s">
+                  {/* <div className="about-stat-card text-light wow fadeInUp" data-wow-delay=".4s">
                     <div className="d-flex align-items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
                       <div className="about-stat-value">135+</div>
                       <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Landmark<br />Projects</div>
@@ -250,7 +250,7 @@ export default function HomePage() {
                       <div className="about-stat-value">24/7</div>
                       <div style={{ fontSize: "13px", lineHeight: 1.5, opacity: 0.75 }}>Homecare<br />Support</div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -717,7 +717,7 @@ export default function HomePage() {
             </div>
 
             <div className="row g-4 justify-content-center">
-              <div className="col-md-3">
+              {/* <div className="col-md-3">
                 <div className="text-center">
                   <img src="/images/agents/1.webp" className="w-100 rounded-1" alt="" />
 
@@ -729,9 +729,9 @@ export default function HomePage() {
                     <div className="fw-500 id-color mt-1">marketingkochi@nationalbuilders.in</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="col-md-5">
+              <div className="">
                 <ContactForm />
               </div>
             </div>
