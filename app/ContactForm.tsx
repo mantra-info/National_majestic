@@ -76,7 +76,6 @@ export default function ContactForm() {
           <div className="text-start">
             <button
               type="submit"
-              id="send_message"
               className="btn-main"
               disabled={submitting}
               style={{
