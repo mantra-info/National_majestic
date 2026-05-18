@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm";
 const latestProjects = [
   {
     name: " Signature Tower 2",
-    location: "Cheranalloor,Ernakulam",
+    location: "Cheranalloor,Edappally",
     type: "Premium Apartments",
     image: "/assets/images/gallery/glry-1.jpg",
     status: "Ongoing"
@@ -437,7 +437,7 @@ export default function HomePage() {
                         <i className="fa-solid fa-location-dot" style={{ color: "var(--primary-color, #c9a96e)", fontSize: "11px" }} />
                         {project.location}
                       </div>
-                      <h5 className="text-white mb-1" style={{ lineHeight: 1.3 }}>{project.name}</h5>
+                      <h5 className="text-white mb-1 project-card-title" style={{ lineHeight: 1.3, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", wordBreak: "break-word", whiteSpace: "normal" }}>{project.name}</h5>
                       <div style={{ color: "var(--primary-color, #c9a96e)", fontSize: "12px", fontWeight: 600, letterSpacing: "0.5px" }}>{project.type}</div>
                     </div>
                   </div>
@@ -456,7 +456,7 @@ export default function HomePage() {
                     Discover
                   </div>
                   <h2 className="wow fadeInUp" data-wow-delay=".4s">
-                     Floorplans
+                     Floor plans
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay=".6s">
                     National Majestic offers ultra-premium 3 & 4 BHK apartments in the heart of Edappally, Kochi —
@@ -590,7 +590,7 @@ export default function HomePage() {
                   icon: "fa-solid fa-road",
                   category: "Connectivity",
                   color: "#5fc98e",
-                  items: [["Edappally Junction", "500 m"], ["NH 66 & NH 47", "Excellent"]]
+                  items: [["Edappally Junction", "400 m"], ["NH 66 & NH 47", "Excellent"]]
                 },
                 {
                   icon: "fa-solid fa-bus",
