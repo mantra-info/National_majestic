@@ -639,17 +639,18 @@ export default function HomePage() {
                         <div
                           key={name}
                           className="d-flex align-items-center justify-content-between"
-                          style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", paddingBottom: "10px" }}
+                          style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", paddingBottom: "10px", gap: "8px" }}
                         >
-                          <div className="d-flex align-items-center gap-2">
+                          <div className="d-flex align-items-center gap-2" style={{ minWidth: 0, flex: 1 }}>
                             <i className="fa-solid fa-circle-dot" style={{ color, fontSize: "8px", flexShrink: 0 }} />
-                            <span style={{ fontSize: "14px", opacity: 0.85 }}>{name}</span>
+                            <span style={{ fontSize: "13px", opacity: 0.85, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{name}</span>
                           </div>
                           <span
                             style={{
-                              fontSize: "12px", fontWeight: 700, letterSpacing: "0.5px",
+                              fontSize: "11px", fontWeight: 700, letterSpacing: "0.5px",
                               background: `${color}22`, color,
-                              padding: "3px 10px", borderRadius: "20px", whiteSpace: "nowrap"
+                              padding: "3px 10px", borderRadius: "20px", whiteSpace: "nowrap",
+                              flexShrink: 0
                             }}
                           >
                             {dist}
