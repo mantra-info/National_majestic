@@ -6,8 +6,8 @@ import ContactForm from "./ContactForm";
 
 const latestProjects = [
   {
-    name: "National Signature Tower 2",
-    location: "Ernakulam, Kerala",
+    name: " Signature Tower 2",
+    location: "Cheranalloor,Ernakulam",
     type: "Premium Apartments",
     image: "/assets/images/gallery/glry-1.jpg",
     status: "Ongoing"
@@ -20,7 +20,7 @@ const latestProjects = [
     status: "Sold Out"
   },
   {
-    name: "National Treedom Park Tower 2",
+    name: "Treedom Park Tower 2 - Luxury Apartments",
     location: "Vyttila, Kochi",
     type: "Premium Apartments",
     image: "/assets/images/gallery/glry-3.jpg",
@@ -147,7 +147,7 @@ export default function HomePage() {
         <section id="section-hero" className="text-light no-top no-bottom relative overflow-hidden z-1000" style={{ minHeight: "100vh" }}>
 
           {/* Centre text overlay */}
-          <div className="abs w-100 z-2 text-center" style={{ top: "58%", transform: "translateY(-50%)" }}>
+          <div className="abs w-100 z-2 text-center hero-content-overlay" style={{ top: "58%", transform: "translateY(-50%)" }}>
             <div className="container">
               {/* <div className="hero-tagline wow fadeInUp">Edappally, Kochi</div> */}
               <h1 className="hero-title wow fadeInUp" data-wow-delay=".15s">
@@ -211,7 +211,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom info bar */}
-          <div className="abs w-100 bottom-0 z-2 pb-4 sm-hide" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)" }}>
+          <div className="abs w-100 bottom-0 z-2 pb-4 hero-stats-bar" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)" }}>
             <div className="container pt-3">
               <div className="col-lg-12">
                 <div className="d-flex justify-content-between">
@@ -456,18 +456,18 @@ export default function HomePage() {
                     Discover
                   </div>
                   <h2 className="wow fadeInUp" data-wow-delay=".4s">
-                    Home Floorplans
+                     Floorplans
                   </h2>
                   <p className="wow fadeInUp" data-wow-delay=".6s">
                     National Majestic offers ultra-premium 3 & 4 BHK apartments in the heart of Edappally, Kochi —
                     combining modern architecture, premium finishes, and world-class amenities for a truly superlative lifestyle.
                   </p>
 
-                  <div className="relative overflow-hidden">
+                  <div className="relative">
                     {floorplanRows.map(([label, value], index) => (
-                      <div key={label} className={`d-flex px-4 py-2 ${index % 2 === 0 ? "bg-dark-2" : ""}`}>
-                        <div style={{ flex: "0 0 48%", opacity: 0.75 }}>{label}</div>
-                        <div className="fw-600" style={{ flex: "1 1 52%", wordBreak: "break-word" }}>{value}</div>
+                      <div key={label} className={`px-3 py-2 ${index % 2 === 0 ? "bg-dark-2" : ""}`} style={{ display: "grid", gridTemplateColumns: "44% 1fr", gap: "8px", alignItems: "start" }}>
+                        <div style={{ opacity: 0.75 }}>{label}</div>
+                        <div className="fw-600" style={{ wordBreak: "break-all", overflowWrap: "anywhere" }}>{value}</div>
                       </div>
                     ))}
                   </div>
@@ -475,12 +475,14 @@ export default function HomePage() {
               </div>
 
               <div className="col-lg-8">
-                <div className="owl-carousel owl-theme owl-single-dots" id="fp-carousel">
+                <div className="owl-carousel owl-theme" id="fp-carousel">
                   {[
                     ["floor-1.jpg", "Basement Floor Plan"],
-                    ["floor-2.jpg", "Ground Floor Plan"],
-                    ["floor-3.jpg", "1st Floor Plan"],
-                    ["floor-4.jpg", "Typical Floor (2nd – 10th)"],
+                    ["floor-2.jpg", "Ground Floor"],
+                    ["floor-3.jpg", "First Floor"],
+                    ["floor-4.jpg", "Typical Floor Plan (2nd to 10th)"],
+                    ["typeA.jpeg", "Type A"],
+                    ["typeB.jpeg", "Type B"],
                     ["floor-5.jpg", "11th Floor Plan"],
                     ["floor-6.jpg", "12th Floor Plan"]
                   ].map(([file, label]) => (
@@ -570,7 +572,7 @@ export default function HomePage() {
                   icon: "fa-solid fa-bag-shopping",
                   category: "Shopping &\nEntertainment",
                   color: "#e8a838",
-                  items: [["LuLu Hypermarket", "0.6 km"], ["Reliance Digital", "0.4 km"]]
+                  items: [["LuLu Mall", "0.6 km"], ["Reliance Digital", "0.4 km"]]
                 },
                 {
                   icon: "fa-solid fa-graduation-cap",
@@ -582,13 +584,13 @@ export default function HomePage() {
                   icon: "fa-solid fa-hospital",
                   category: "Healthcare",
                   color: "#e05c5c",
-                  items: [["Amrita Institute of Medical Sciences", "Nearby"]]
+                  items: [["Amrita Institute of Medical Sciences", "Nearby"],["MAJ Hospital", "200 m"]]
                 },
                 {
                   icon: "fa-solid fa-road",
                   category: "Connectivity",
                   color: "#5fc98e",
-                  items: [["Edappally Junction", "Easy access"], ["NH 66 & NH 47", "Excellent"]]
+                  items: [["Edappally Junction", "500 m"], ["NH 66 & NH 47", "Excellent"]]
                 },
                 {
                   icon: "fa-solid fa-bus",
@@ -898,13 +900,24 @@ export default function HomePage() {
       </Script>
       <Script id="fp-nav" strategy="afterInteractive">
         {`window.addEventListener("load", function () {
-          var prev = document.getElementById("fp-prev");
-          var next = document.getElementById("fp-next");
-          if (prev && next && window.jQuery) {
+          window.setTimeout(function () {
+            if (!window.jQuery || window._fpCarouselReady) return;
+            window._fpCarouselReady = true;
             var $owl = window.jQuery("#fp-carousel");
-            prev.addEventListener("click", function () { $owl.trigger("prev.owl.carousel"); });
-            next.addEventListener("click", function () { $owl.trigger("next.owl.carousel"); });
-          }
+            if ($owl.hasClass("owl-loaded")) {
+              $owl.trigger("destroy.owl.carousel");
+              $owl.removeClass("owl-loaded owl-drag");
+            }
+            $owl.owlCarousel({ loop: true, items: 1, nav: false, dots: true, smartSpeed: 500 });
+            var prev = document.getElementById("fp-prev");
+            var next = document.getElementById("fp-next");
+            if (prev && next) {
+              var np = prev.cloneNode(true); prev.parentNode.replaceChild(np, prev);
+              var nn = next.cloneNode(true); next.parentNode.replaceChild(nn, next);
+              np.addEventListener("click", function () { $owl.trigger("prev.owl.carousel"); });
+              nn.addEventListener("click", function () { $owl.trigger("next.owl.carousel"); });
+            }
+          }, 300);
         });`}
       </Script>
       <Script id="template-load-fix" strategy="afterInteractive">
