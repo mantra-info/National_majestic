@@ -868,7 +868,7 @@ export default function HomePage() {
           <i className="fa-solid fa-phone" />
         </a>
         <a
-          href="https://wa.me/919847533355"
+          href="https://wa.me/919847717771"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp us"
