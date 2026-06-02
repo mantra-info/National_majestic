@@ -855,7 +855,7 @@ export default function HomePage() {
       {/* Floating Call + WhatsApp buttons */}
       <div style={{ position: "fixed", bottom: "24px", right: "20px", zIndex: 9999, display: "flex", flexDirection: "column", gap: "12px" }}>
         <a
-          href="tel:+919847533355"
+          href="tel:+919847717771"
           aria-label="Call us"
           style={{
             width: "52px", height: "52px", borderRadius: "50%",
