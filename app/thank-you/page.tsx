@@ -106,9 +106,9 @@ export default function ThankYouPage() {
           fontSize: "13px",
         }}
       >
-        <a href="tel:+919847533355" style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>
+        <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_1?.replace(/\s/g, '')}`} style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>
           <i className="fa-solid fa-phone" style={{ color: "#CC1F2D", marginRight: "6px" }} />
-          +91 98475 33355
+          {process.env.NEXT_PUBLIC_PHONE_1}
         </a>
         <a href="mailto:marketingkochi@nationalbuilders.in" style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>
           <i className="fa-solid fa-envelope" style={{ color: "#CC1F2D", marginRight: "6px" }} />

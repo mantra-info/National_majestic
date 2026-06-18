@@ -742,9 +742,9 @@ export default function HomePage() {
 
                   <div className="mt-3">
                     <h4 className="mb-0">National Builders</h4>
-                    <div className="fw-500 id-color">+91 98475 33355</div>
-                    <div className="fw-500 id-color">+91 98475 44222</div>
-                    <div className="fw-500 id-color">+91 98477 17771</div>
+                    <div className="fw-500 id-color">{process.env.NEXT_PUBLIC_PHONE_1}</div>
+                    <div className="fw-500 id-color">{process.env.NEXT_PUBLIC_PHONE_2}</div>
+                    <div className="fw-500 id-color">{process.env.NEXT_PUBLIC_PHONE_3}</div>
                     <div className="fw-500 id-color mt-1">marketingkochi@nationalbuilders.in</div>
                   </div>
                 </div>
@@ -808,15 +808,15 @@ export default function HomePage() {
               </p>
               <p className="fs-15 mb-1">
                 <i className="fa-solid fa-phone me-2 id-color" />
-                <a href="tel:+919847533355" className="text-white opacity-75 text-decoration-none">+91 98475 33355</a>
+                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_1?.replace(/\s/g, '')}`} className="text-white opacity-75 text-decoration-none">{process.env.NEXT_PUBLIC_PHONE_1}</a>
               </p>
               <p className="fs-15 mb-1">
                 <i className="fa-solid fa-phone me-2 id-color" />
-                <a href="tel:+919847544222" className="text-white opacity-75 text-decoration-none">+91 98475 44222</a>
+                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_2?.replace(/\s/g, '')}`} className="text-white opacity-75 text-decoration-none">{process.env.NEXT_PUBLIC_PHONE_2}</a>
               </p>
               <p className="fs-15 mb-1">
                 <i className="fa-solid fa-phone me-2 id-color" />
-                <a href="tel:+919847717771" className="text-white opacity-75 text-decoration-none">+91 98477 17771</a>
+                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_3?.replace(/\s/g, '')}`} className="text-white opacity-75 text-decoration-none">{process.env.NEXT_PUBLIC_PHONE_3}</a>
               </p>
               <p className="fs-15 mt-2 mb-0">
                 <i className="fa-solid fa-envelope me-2 id-color" />
@@ -855,7 +855,7 @@ export default function HomePage() {
       {/* Floating Call + WhatsApp buttons */}
       <div style={{ position: "fixed", bottom: "24px", right: "20px", zIndex: 9999, display: "flex", flexDirection: "column", gap: "12px" }}>
         <a
-          href="tel:+919847717771"
+          href={`tel:${process.env.NEXT_PUBLIC_PHONE_3?.replace(/\s/g, '')}`}
           aria-label="Call us"
           style={{
             width: "52px", height: "52px", borderRadius: "50%",
@@ -868,7 +868,7 @@ export default function HomePage() {
           <i className="fa-solid fa-phone" />
         </a>
         <a
-          href="https://wa.me/919847717771"
+          href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_3?.replace(/[+\s]/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp us"
