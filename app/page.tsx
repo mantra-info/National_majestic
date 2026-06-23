@@ -816,7 +816,7 @@ export default function HomePage() {
               </p>
               <p className="fs-15 mb-1">
                 <i className="fa-solid fa-phone me-2 id-color" />
-                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_3?.replace(/\s/g, '')}`} className="text-white opacity-75 text-decoration-none">{process.env.NEXT_PUBLIC_PHONE_3}</a>
+                <a href={`tel:+91 98477 17771`} className="text-white opacity-75 text-decoration-none">+91 98477 17771</a>
               </p>
               <p className="fs-15 mt-2 mb-0">
                 <i className="fa-solid fa-envelope me-2 id-color" />
